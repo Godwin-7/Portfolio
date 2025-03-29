@@ -1,0 +1,86 @@
+.edu-glow-card {
+  position: relative;
+  background: #101123;
+  border-radius: 12px;
+  overflow: hidden;
+  --active: 0;
+  --mouse-x: 0;
+  --mouse-y: 0;
+  --edge-distance: 0;
+  --hue: 270; /* Default purple */
+  --saturation: 80%;
+  box-shadow: 0px 4px 15px rgba(126, 34, 206, 0.3); /* Soft purple glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 90%;
+}
+
+.edu-glow-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 25px rgba(126, 34, 206, 0.5); /* Stronger glow on hover */
+}
+
+/* Inner rectangle glow */
+.edu-glow-rectangle {
+  position: absolute;
+  inset: 4px; /* Smaller than card */
+  border-radius: 8px; /* Slightly smaller radius */
+  opacity: var(--active);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  background: 
+    radial-gradient(
+      400px circle at var(--mouse-x) var(--mouse-y),
+      hsla(var(--hue), var(--saturation), 50%, 0.3),
+      transparent 60%
+    );
+  filter: blur(12px);
+  z-index: 0;
+}
+
+/* Border glow effect */
+.edu-glow-border {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 2px; /* Glow thickness */
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: subtract;
+    mask-composite: subtract; /* Standard property */
+    pointer-events: none;
+    opacity: var(--active);
+    transition: opacity 0.4s ease;  
+  
+  background: 
+    linear-gradient(
+      hsla(var(--hue), var(--saturation), 70%, 0.8),
+      hsla(calc(var(--hue) + 60), var(--saturation), 70%, 0.4)
+    );
+  filter: blur(1px);
+  z-index: 1;
+}
+
+.edu-card-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+/* Dynamic color animation */
+@keyframes eduColorShift {
+  0% { --hue: 270; }
+  25% { --hue: 300; }
+  50% { --hue: 330; }
+  75% { --hue: 0; }
+  100% { --hue: 270; }
+}
+
+.edu-glow-card:hover .edu-glow-rectangle,
+.edu-glow-card:hover .edu-glow-border {
+  animation: eduColorShift 8s infinite linear;
+}
