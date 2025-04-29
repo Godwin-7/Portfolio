@@ -2,6 +2,8 @@ import React from 'react';
 import Skills from './components/Pages/Homepage/Skills/skills';
 import Education from './components/Pages/Homepage/Education/Education';
 //import Experience from './components/Pages/Homepage/Experience/Experience';
+import Scroll from './components/Pages/Homepage/ScrollToTop/Scroll';
+
 
 function App() {
   return (
@@ -9,6 +11,7 @@ function App() {
       <Skills />
       <Education/>
       {/*<Experience/>*/}
+      <Scroll/>
     </div>
   );
 }
