@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Skills from './components/Pages/Homepage/Skills/skills';
 import Education from './components/Pages/Homepage/Education/Education';
 // import Experience from './components/Pages/Homepage/Experience/Experience';
+import Proficiency from './components/Pages/Homepage/Proficiency/Proficiency';
 import Scroll from './components/Pages/Homepage/ScrollToTop/Scroll';
 
 import Projects from './components/Pages/Homepage/Projects/Projects';
@@ -24,6 +25,7 @@ function App() {
                 <Skills />
                 <Education />
                 {/* <Experience /> */}
+                <Proficiency />
                 <Projects />
                 <Scroll />
               </>
