@@ -48,15 +48,19 @@
   background: #ffffff;
   border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   cursor: pointer;
+  transform-style: preserve-3d; /* Enable 3D transforms */
 }
 
+
 .project-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  animation: shake-flip 0.6s ease-in-out;
 }
+
 
 /* Border accent on hover */
 .project-card::before,
@@ -149,9 +153,16 @@
 /* Project Card Hover Effects - Corner Borders */
 .project-card {
   position: relative;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transform-style: preserve-3d; /* Enable 3D transforms */
 }
+
 
 .project-card::before,
 .project-card::after {
@@ -245,3 +256,24 @@
   background-color: #0a782b;
 }
 
+@keyframes shake-flip {
+  0% { transform: translateY(-8px) scale(1.02) rotateY(0deg); }
+  15% { transform: translateY(-8px) scale(1.02) rotateY(-5deg) rotateX(5deg) translateX(-3px); }
+  30% { transform: translateY(-8px) scale(1.02) rotateY(5deg) rotateX(-5deg) translateX(3px); }
+  45% { transform: translateY(-8px) scale(1.02) rotateY(-3deg) rotateX(3deg) translateX(-2px); }
+  60% { transform: translateY(-8px) scale(1.02) rotateY(3deg) rotateX(-3deg) translateX(2px); }
+  75% { transform: translateY(-8px) scale(1.02) rotateY(-1deg) rotateX(1deg) translateX(-1px); }
+  90% { transform: translateY(-8px) scale(1.02) rotateY(1deg) rotateX(-1deg) translateX(1px); }
+  100% { transform: translateY(-8px) scale(1.02) rotateY(0deg) rotateX(0deg) translateX(0px); }
+}
+
+.project-card:active {
+  animation: intense-shake 0.3s ease-in-out;
+}
+
+@keyframes intense-shake {
+  0%, 100% { transform: translateY(-8px) scale(1.02) rotate(0deg); }
+  25% { transform: translateY(-8px) scale(1.02) rotate(-5deg) translateX(-3px); }
+  50% { transform: translateY(-8px) scale(1.02) rotate(5deg) translateX(3px); }
+  75% { transform: translateY(-8px) scale(1.02) rotate(-3deg) translateX(-2px); }
+}

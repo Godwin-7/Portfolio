@@ -23,7 +23,7 @@ const SkillBars = [
     progressPercentage: "80"
   },
   {
-    Stack: "DevOps",
+    Stack: "Web Development",
     progressPercentage: "50"
   },
   {
@@ -179,7 +179,7 @@ const Proficiency = () => {
                 className="lottie-container"
                 variants={itemVariants}
               >
-                <GreetingLottie animationPath="/lottie/build.json" />
+                <GreetingLottie animationPath="../../lottie/build.json" />
               </motion.div>
             </Col>
           </Row>
