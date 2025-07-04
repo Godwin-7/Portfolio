@@ -1,0 +1,80 @@
+/* FloatingLogos.css */
+
+.floating-logos-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1 !important; /* Set above content */
+  pointer-events: none;
+  overflow: hidden;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+#tsparticles {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+  pointer-events: auto;
+  pointer-events: none;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Ensure particles canvas is properly positioned */
+#tsparticles canvas {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+  pointer-events: none;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Performance optimizations */
+#tsparticles {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Ensure smooth animations */
+#tsparticles canvas {
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .floating-logos-container {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-logos-container {
+    opacity: 0.5;
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  #tsparticles canvas {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Ensure the container doesn't interfere with scrolling */
+.floating-logos-container {
+  overflow: hidden;
+}
+
