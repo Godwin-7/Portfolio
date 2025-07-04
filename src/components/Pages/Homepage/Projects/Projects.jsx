@@ -14,7 +14,6 @@ import recommenderImg from './Projects-all/Movies/img/recommender.jpg';
 import vdgImg from './Projects-all/VDG/img/vdg.jpg';
 import ganImg from './Projects-all/GAN/img/gan.jpg';*/
 
-
 const projects = [
   {
     title: 'Music Streaming Website',
@@ -79,6 +78,42 @@ export default function Projects() {
   const closeModal = () => setSelectedIdx(null);
   const showPrev = () => setSelectedIdx(i => (i > 0 ? i - 1 : i));
   const showNext = () => setSelectedIdx(i => (i < filtered.length - 1 ? i + 1 : i));
+
+  // Magnetic effect handlers
+  const handleMagneticMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    
+    e.currentTarget.style.transform = `translateX(calc(-50% + ${x * 0.1}px)) translateY(${y * 0.1}px)`;
+  };
+
+  const handleMagneticLeave = (e) => {
+    e.currentTarget.style.transform = 'translateX(-50%) translateY(0)';
+  };
+
+  // Ripple effect handler
+  const handleRippleClick = (e) => {
+    const button = e.currentTarget;
+    const ripple = document.createElement('span');
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+    
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    ripple.classList.add('ripple');
+    
+    button.appendChild(ripple);
+    
+    setTimeout(() => {
+      if (ripple.parentNode) {
+        ripple.parentNode.removeChild(ripple);
+      }
+    }, 600);
+  };
 
   useEffect(() => {
     if (selectedIdx !== null) {
@@ -152,20 +187,29 @@ export default function Projects() {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="white"
-                        strokeWidth="2"
+                        strokeWidth="2.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        width="24"
-                        height="24"
+                        width="28"
+                        height="28"
                       >
+                        <path d="M9 12l2 2 4-4" />
                         <circle cx="12" cy="12" r="10" />
-                        <line x1="12" y1="16" x2="12" y2="12" />
-                        <line x1="12" y1="8" x2="12" y2="8" />
                       </svg>
                     </div>
-                    <span className="view-project-text">View Project</span>
+                    <span 
+                      className="view-project-text magnetic"
+                      onMouseMove={handleMagneticMove}
+                      onMouseLeave={handleMagneticLeave}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleRippleClick(e);
+                        openModal(idx);
+                      }}
+                    >
+                      View Project
+                    </span>
                   </div>
-                  <span className="border-highlight"></span>
                 </div>
                 <h4>{project.title}</h4>
               </div>
