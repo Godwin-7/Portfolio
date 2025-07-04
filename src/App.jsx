@@ -6,7 +6,10 @@ import Skills from './components/Pages/Homepage/Skills/skills';
 import Education from './components/Pages/Homepage/Education/Education';
 import Proficiency from './components/Pages/Homepage/Proficiency/Proficiency';
 import Projects from './components/Pages/Homepage/Projects/Projects';
+import Interest from './components/Pages/Homepage/Interests/Interest';
 import Scroll from './components/Pages/Homepage/ScrollToTop/Scroll';
+
+
 import Music from './components/Pages/Homepage/Projects/Projects-all/Music/Music';
 import ML from './components/Pages/Homepage/Projects/Projects-all/ML/ML';
 import Resume from './components/Pages/Homepage/Projects/Projects-all/Resume/Resume';
@@ -29,6 +32,7 @@ function App() {
                   <Education />
                   <Proficiency />
                   <Projects />
+                  <Interest />
                   <Scroll />
                 </>
               }
