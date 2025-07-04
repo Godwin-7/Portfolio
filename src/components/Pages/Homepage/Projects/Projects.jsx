@@ -14,6 +14,7 @@ import recommenderImg from './Projects-all/Movies/img/recommender.jpg';
 import vdgImg from './Projects-all/VDG/img/vdg.jpg';
 import ganImg from './Projects-all/GAN/img/gan.jpg';*/
 
+
 const projects = [
   {
     title: 'Music Streaming Website',
@@ -39,7 +40,7 @@ const projects = [
     component: 'twitter',
     category: 'app',
   },
-  /*
+    /*
   {
     title: 'Image recognition as Service',
     image: irasImg,
@@ -70,7 +71,7 @@ const projects = [
 export default function Projects() {
   const [filter, setFilter] = useState('all');
   const [selectedIdx, setSelectedIdx] = useState(null);
-  const [renderKey, setRenderKey] = useState(0); // ✅ Used to force re-animation
+  const [renderKey, setRenderKey] = useState(0);
 
   const filtered = projects.filter(p => filter === 'all' || p.category === filter);
 
@@ -79,7 +80,6 @@ export default function Projects() {
   const showPrev = () => setSelectedIdx(i => (i > 0 ? i - 1 : i));
   const showNext = () => setSelectedIdx(i => (i < filtered.length - 1 ? i + 1 : i));
 
-  // ✅ Prevent background scroll when modal is open
   useEffect(() => {
     if (selectedIdx !== null) {
       document.body.style.overflow = 'hidden';
@@ -91,7 +91,6 @@ export default function Projects() {
     };
   }, [selectedIdx]);
 
-  // ✅ Initialize AOS
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -101,7 +100,6 @@ export default function Projects() {
     });
   }, []);
 
-  // ✅ Refresh and re-trigger on filter change
   useEffect(() => {
     AOS.refreshHard();
     setRenderKey(prev => prev + 1);
@@ -137,38 +135,40 @@ export default function Projects() {
           {filtered.map((project, idx) => (
             <div
               key={`${project.title}-${renderKey}`}
-              className={`project-card filter-${project.category}`}
-              onClick={() => openModal(idx)}
               data-aos="flip-up"
               data-aos-delay={`${idx * 100}`}
               data-aos-easing="ease-in-out-back"
               data-aos-duration="1000"
             >
-              <div className="image-container">
-                <img src={project.image} alt={project.title} />
-                <div className="overlay">
-                  <div className="info-icon">
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="white"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            width="24"
-                            height="24"
-                        >
-                            <circle cx="12" cy="12" r="10" />
-                            <line x1="12" y1="16" x2="12" y2="12" />
-                            <line x1="12" y1="8" x2="12" y2="8" />
-                        </svg>
+              <div
+                className={`project-card filter-${project.category}`}
+                onClick={() => openModal(idx)}
+              >
+                <div className="image-container">
+                  <img src={project.image} alt={project.title} />
+                  <div className="overlay">
+                    <div className="info-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        width="24"
+                        height="24"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12" y2="8" />
+                      </svg>
                     </div>
-
-                  <span className="view-project-text">View Project</span>
+                    <span className="view-project-text">View Project</span>
+                  </div>
+                  <span className="border-highlight"></span>
                 </div>
-                <span className="border-highlight"></span>
+                <h4>{project.title}</h4>
               </div>
-              <h4>{project.title}</h4>
             </div>
           ))}
         </div>
