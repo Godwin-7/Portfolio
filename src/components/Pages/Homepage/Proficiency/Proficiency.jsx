@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "reactstrap";
 import { motion } from "framer-motion";
 import Lottie from "react-lottie";
 import "./Proficiency.css";
@@ -133,14 +132,15 @@ const Proficiency = () => {
 
   return (
     SkillBars && (
-      <Container className="section section-lg">
+      <div className="section section-lg">
         <motion.div
+          className="proficiency-container"
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
           variants={containerVariants}
         >
-          <Row className="proficiency-row">
-            <Col lg="6" className="skills-column">
+          <div className="proficiency-row">
+            <div className="skills-column">
               <motion.h1 className="h1" variants={itemVariants}>
                 Proficiency
               </motion.h1>
@@ -173,18 +173,18 @@ const Proficiency = () => {
                   </motion.div>
                 );
               })}
-            </Col>
-            <Col lg="6" className="animation-column">
+            </div>
+            <div className="animation-column">
               <motion.div 
                 className="lottie-container"
                 variants={itemVariants}
               >
                 <GreetingLottie animationPath="../../lottie/build.json" />
               </motion.div>
-            </Col>
-          </Row>
+            </div>
+          </div>
         </motion.div>
-      </Container>
+      </div>
     )
   );
 };

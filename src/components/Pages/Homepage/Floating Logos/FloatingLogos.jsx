@@ -116,7 +116,7 @@ const FloatingLogos = () => {
               value: 15
             },
             opacity: {
-              value: { min: 0.3, max: 0.9 },   // darken slightly
+              value: { min: 0.2, max: 0.6 },   // darken slightly
               animation: {
                 enable: true,
                 speed: 1,
@@ -210,8 +210,8 @@ const FloatingLogos = () => {
             },
             size: {
               value: {
-                min: 12,
-                max: 20
+                min: 10,
+                max: 15
               },
               animation: {
                 enable: true,

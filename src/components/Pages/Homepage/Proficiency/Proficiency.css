@@ -1,62 +1,74 @@
 /* Proficiency Section Styles */
 .section {
   position: relative;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  height: 100vh;
+  padding: 4rem 2rem;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .section-lg {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding: 6rem 2rem;
 }
 
-/* Fix Row Layout - KEY CHANGE: Remove flex, use relative positioning */
-.proficiency-row {
-  position: relative;
-  min-height: 500px;
+/* Container for the entire proficiency section */
+.proficiency-container {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-/* Left column - Skills - KEY CHANGES */
-.skills-column {
-  width: 100% !important;           /* ✅ Force full width */
-  max-width: 100% !important;       /* ✅ Override Bootstrap constraints */
-  padding-right: 20px !important;      /* ✅ Remove right padding */
-  padding-left: 0 !important;       /* ✅ Remove left padding */
-  z-index: 2;                       /* ✅ Above animation */
-  position: relative;
-  
-  /* ✅ Add some right margin to prevent overlap with animation */
-  margin-right: 25rem;              /* Adjust based on animation size */
-  /* background-color: #ffffff; Add to see section */
-}
-
-/* Right column - Animation - KEEP ABSOLUTE */
-.animation-column {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: -45rem; /* To move Animation left or right*/
-  width: 500px;                     /* ✅ Fixed width for animation */
+/* Main row - Fixed horizontal layout that never wraps */
+.proficiency-row {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  overflow: visible;
-  height: 100%;
+  width: 100%;
+  min-height: 500px;
+  flex-wrap: nowrap;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Skills section - Reduced to 45% width for smaller bars */
+.skills-column {
+  flex: 0 0 45%;
+  width: 45%;
+  min-width: 0;
+  max-width: 45%;
+  padding: 0 2rem 0 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* Animation section - Increased to 55% width for bigger animation */
+.animation-column {
+  flex: 0 0 55%;
+  width: 55%;
+  min-width: 0;
+  max-width: 55%;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   z-index: 1;
-  pointer-events: none;             /* ✅ Prevent interaction issues */
 }
 
 .h1 {
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 600;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin-bottom: 5rem;
+  margin-bottom: clamp(2rem, 8vw, 5rem);
   margin-top: 0; 
   margin-left: 10px;
   position: relative;
@@ -73,16 +85,14 @@
   border-radius: 2px;
 }
 
-/* Progress Info Styles - KEY CHANGES */
+/* Progress Info Styles */
 .progress-info {
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
   position: relative;
-  padding-left: 60px;
-  width: 100%;                      /* ✅ Full width */
-  box-sizing: border-box;           /* ✅ Include padding in width */
-  /* background-color: #f8f9fa;  /* Or add background to individual progress bars */
+  padding-left: clamp(20px, 4vw, 60px);
+  width: 100%;
+  box-sizing: border-box;
   border-radius: 8px;
-  margin-bottom: 2rem;
 }
 
 .progress-info::before {
@@ -108,7 +118,7 @@
   align-items: center;
   margin-bottom: 0.25rem;
   margin-top: 0.5rem;
-  width: 100%;                      /* ✅ Full width */
+  width: 100%;
 }
 
 .progress-label span {
@@ -133,16 +143,16 @@
   font-weight: 600;
 }
 
-/* Progress Bar Styles - KEY CHANGES */
+/* Progress Bar Styles */
 .progress-wrapper {
   position: relative;
   height: 12px;
-  width: 100%;                      /* ✅ Full width */
+  width: 100%;
   margin-bottom: 1.5rem;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;           /* ✅ Include any padding/border in width */
+  box-sizing: border-box;
 }
 
 .progress-bg {
@@ -153,7 +163,7 @@
   bottom: 0;
   background-color: #e9ecef;
   border-radius: 10px;
-  width: 100%;                      /* ✅ Full width */
+  width: 100%;
 }
 
 .progress-bar-animated {
@@ -166,7 +176,6 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  /* Width will be set by React animation */
 }
 
 .progress-bar-animated::after {
@@ -194,21 +203,18 @@
   }
 }
 
-/* Lottie Animation Container */
+/* Lottie Animation Container - Larger scale for bigger animation */
 .lottie-container {
-  all: unset;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   overflow: visible;
   background: transparent;
-  border: none;
-  backdrop-filter: none;
-  border-radius: 0;
-  margin-left: 0;
-  transform: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .lottie-animation {
@@ -218,8 +224,8 @@
   justify-content: center;
   align-items: center;
   overflow: visible;
-  transform: scale(1.4); /* Increase or Decrease Animation Size*/
-  transform-origin: center right;
+  transform: scale(clamp(0.8, 3vw, 1.6));
+  transform-origin: center;
 }
 
 .lottie-animation > div {
@@ -337,57 +343,40 @@
   transform: translateX(5px);
 }
 
-/* Responsive Design */
-@media (max-width: 991.98px) {
-  .section-lg {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-  
-  .h1 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  
+/* Responsive Design - Only stack vertically on very small screens */
+@media (max-width: 600px) {
   .proficiency-row {
-    display: flex;
     flex-direction: column;
-    min-height: auto;
+    gap: 2rem;
   }
   
   .skills-column {
-    margin-right: 0;                /* ✅ Remove right margin on mobile */
-    margin-bottom: 3rem;
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
   }
   
   .animation-column {
-    position: relative;             /* ✅ Make relative on mobile */
-    right: auto;
-    width: auto;
-    padding-left: 0;
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+    height: 250px;
   }
   
   .lottie-container {
-    max-width: 350px;
-    height: 350px;
+    max-width: 200px;
+    height: 200px;
     margin: 0 auto;
-    border-radius: 0;
   }
   
-  .progress-info {
-    margin-bottom: 1.5rem;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .section-lg {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+  .lottie-animation {
+    transform: scale(0.8);
   }
   
   .h1 {
-    font-size: 1.75rem;
     text-align: center;
+    margin-left: 0;
   }
   
   .h1::after {
@@ -395,18 +384,12 @@
     transform: translateX(-50%);
   }
   
-  .lottie-container {
-    max-width: 280px;
-    height: 280px;
-    border-radius: 0;
+  .section {
+    padding: 2rem 1rem;
   }
   
-  .placeholder-icon {
-    font-size: 3rem;
-  }
-  
-  .placeholder-text {
-    font-size: 1.2rem;
+  .section-lg {
+    padding: 2rem 1rem;
   }
   
   .progress-label {
@@ -417,5 +400,43 @@
   .progress-percentage {
     text-align: left;
     margin-top: 0.25rem;
+    margin-left: 0;
+  }
+  
+  .progress-wrapper {
+    height: 10px;
+  }
+  
+  .progress-label span {
+    font-size: 0.8rem;
+  }
+  
+  .progress-percentage span {
+    font-size: 0.8rem;
+  }
+}
+
+/* For screens larger than 600px, maintain horizontal layout at all times */
+@media (min-width: 601px) and (max-width: 800px) {
+  .skills-column {
+    padding: 0 1rem 0 0;
+  }
+  
+  .lottie-animation {
+    transform: scale(clamp(0.9, 1.8vw, 1.2));
+  }
+  
+  .section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .section-lg {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  .lottie-animation {
+    transform: scale(clamp(1.1, 2.2vw, 1.4));
   }
 }
