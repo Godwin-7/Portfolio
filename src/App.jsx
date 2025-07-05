@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import FloatingLogos from './components/Pages/Homepage/Floating Logos/FloatingLogos';
-import Skills from './components/Pages/Homepage/Skills/skills';
+import Skills from './components/Pages/Homepage/Skills/Skills';
 import Education from './components/Pages/Homepage/Education/Education';
 import Proficiency from './components/Pages/Homepage/Proficiency/Proficiency';
 import Projects from './components/Pages/Homepage/Projects/Projects';
@@ -28,10 +28,10 @@ function App() {
               path="/"
               element={
                 <>
-                  <Skills />
                   <Education />
                   <Proficiency />
                   <Projects />
+                  <Skills />
                   <Interest />
                   <Scroll />
                 </>

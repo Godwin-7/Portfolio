@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1 !important; /* Set above content */
+  z-index: 100 !important; /* Set above content */
   pointer-events: none;
   overflow: hidden;
   will-change: transform;
@@ -20,7 +20,7 @@
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  z-index: 1 !important;
+  z-index: 100 !important;
   pointer-events: auto;
   pointer-events: none;
   image-rendering: -webkit-optimize-contrast;
@@ -33,7 +33,7 @@
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  z-index: 1 !important;
+  z-index: 100 !important;
   pointer-events: none;
   image-rendering: -webkit-optimize-contrast;
 }

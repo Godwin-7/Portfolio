@@ -1,20 +1,22 @@
 /* Main container styles */
 .skills-section {
     position: relative;
-    z-index: 50;
+    z-index: 0; /* Changed from 50 to 0 to make other layers of other components visible */
     border-top: 1px solid #25213b;
-    margin: 3rem 0;
+    margin: 0; /* Change from 3rem 0 to 0 */
     max-width: 100vw;
     overflow-x: hidden;
     background: linear-gradient(180deg, #0f0f23, #1a1b3d);
     padding: 2rem 1rem;
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
     box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+    flex-shrink: 0;
+    height: auto;
 }
 
 @media (min-width: 1024px) {
     .skills-section {
-        margin: 6rem 0;
+        margin: 0; /* Change from 6rem 0 to 0 */
     }
 }
 
@@ -43,6 +45,12 @@
     width: 75%;
     height: 1px;
     background: linear-gradient(to right, transparent, rgba(139, 92, 246, 1), transparent);
+}
+
+/* Bottom gradient line styles */
+.skills-gradient-line-container:last-child {
+    transform: translateY(1px);
+    margin-top: 1rem;
 }
 
 /* Title section styles */
@@ -89,6 +97,7 @@
     overflow: visible !important;
     white-space: nowrap;
     padding: 1rem 0;
+    height: auto;
 }
 
 /* Skill card styles */
@@ -208,6 +217,7 @@
     white-space: nowrap;
     scrollbar-width: none; /* Hide scrollbar for Firefox */
     -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    height: auto;
 }
 
 .skills-scroll-container::-webkit-scrollbar {

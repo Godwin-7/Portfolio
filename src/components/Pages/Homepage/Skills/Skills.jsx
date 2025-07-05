@@ -53,6 +53,12 @@ function Skills() {
           ))}
         </Marquee>
       </div>
+
+      {/* Bottom gradient line - same as top */}
+      <div className="skills-gradient-line-container">
+        <div className="skills-gradient-line"></div>
+      </div>
+      
     </div>
   );
 }

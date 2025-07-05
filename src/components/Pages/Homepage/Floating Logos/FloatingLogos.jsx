@@ -35,7 +35,7 @@ const FloatingLogos = () => {
         options={{
           fullScreen: {
             enable: true,
-            zIndex: 1 // Set ABOVE all content (make sections z-index: 0 or default)
+            zIndex: 100 // Set ABOVE all content (make sections z-index: 0 or default)
           },
           detectRetina: true,
           fpsLimit: 60,
