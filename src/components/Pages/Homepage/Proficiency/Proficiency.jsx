@@ -66,10 +66,10 @@ const GreetingLottie = ({ animationPath }) => {
 
   if (isLoading) {
     return (
-      <div className="lottie-placeholder">
-        <div className="placeholder-content">
-          <div className="placeholder-icon">⚡</div>
-          <div className="placeholder-text">Loading...</div>
+      <div className="prof-lottie-placeholder">
+        <div className="prof-placeholder-content">
+          <div className="prof-placeholder-icon">⚡</div>
+          <div className="prof-placeholder-text">Loading...</div>
         </div>
       </div>
     );
@@ -77,18 +77,18 @@ const GreetingLottie = ({ animationPath }) => {
 
   if (!animationData) {
     return (
-      <div className="lottie-placeholder">
-        <div className="placeholder-content">
-          <div className="placeholder-icon">🔧</div>
-          <div className="placeholder-text">Building...</div>
-          <div className="placeholder-subtext">Skills & Expertise</div>
+      <div className="prof-lottie-placeholder">
+        <div className="prof-placeholder-content">
+          <div className="prof-placeholder-icon">🔧</div>
+          <div className="prof-placeholder-text">Building...</div>
+          <div className="prof-placeholder-subtext">Skills & Expertise</div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="lottie-animation">
+    <div className="prof-lottie-animation">
       <Lottie 
         options={defaultOptions} 
         height="100%"
@@ -132,35 +132,35 @@ const Proficiency = () => {
 
   return (
     SkillBars && (
-      <div className="section section-lg">
+      <div className="prof-section prof-section-lg">
         <motion.div
-          className="proficiency-container"
+          className="prof-container"
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
           variants={containerVariants}
         >
-          <div className="proficiency-row">
-            <div className="skills-column">
-              <motion.h1 className="h1" variants={itemVariants}>
+          <div className="prof-row">
+            <div className="prof-skills-column">
+              <motion.h1 className="prof-h1" variants={itemVariants}>
                 Proficiency
               </motion.h1>
               {SkillBars.map((skill, index) => {
                 return (
                   <motion.div 
-                    className="progress-info" 
+                    className="prof-progress-info" 
                     key={skill.Stack}
                     variants={itemVariants}
                   >
-                    <div className="progress-label">
+                    <div className="prof-progress-label">
                       <span>{skill.Stack}</span>
                     </div>
-                    <div className="progress-percentage">
+                    <div className="prof-progress-percentage">
                       <span>{skill.progressPercentage}%</span>
                     </div>
-                    <div className="progress-wrapper">
-                      <div className="progress-bg"></div>
+                    <div className="prof-progress-wrapper">
+                      <div className="prof-progress-bg"></div>
                       <motion.div
-                        className="progress-bar-animated"
+                        className="prof-progress-bar-animated"
                         initial={{ width: 0 }}
                         animate={isVisible ? { width: `${skill.progressPercentage}%` } : { width: 0 }}
                         transition={{
@@ -174,9 +174,9 @@ const Proficiency = () => {
                 );
               })}
             </div>
-            <div className="animation-column">
+            <div className="prof-animation-column">
               <motion.div 
-                className="lottie-container"
+                className="prof-lottie-container"
                 variants={itemVariants}
               >
                 <GreetingLottie animationPath="../../lottie/build.json" />
