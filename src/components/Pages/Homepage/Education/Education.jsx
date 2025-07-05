@@ -43,6 +43,8 @@ function Education() {
             ))}
           </div>
         </div>
+
+        <div className="education-bottom-border"></div>
       </div>
     </section>
   );

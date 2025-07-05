@@ -1,22 +1,22 @@
 .education-section {
   position: relative;
-  z-index: 50;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  background: linear-gradient(to bottom, #0f0f23, #1a1443); /* Dark-themed gradient */
+  z-index: 2; /* Optimized z-index for better compatibility */
+  margin: 0;
+  padding: 2rem 0; /* Reduced padding to minimize height */
+  background: linear-gradient(to bottom, #0f0f23, #1a1443);
   border-top: 1px solid #25213b;
-  max-height: 100vh; /* Set section to full viewport height */
+  border-bottom: 1px solid #25213b; /* Added bottom border */
+  min-height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content within the viewport */
-  padding-bottom: 3rem; /* Prevent elements from touching the bottom */
+  justify-content: center;
 }
 
 .education-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-  max-height: 100%; /* Restrict max height to fit within screen */
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,16 +26,23 @@
   height: 1px;
   background: linear-gradient(to right, transparent, #7e22ce, transparent);
   width: 75%;
-  margin: 0 auto;
+  margin: 0 auto 1rem auto; /* Reduced bottom margin */
   transform: translateY(-1px);
+}
+
+.education-bottom-border {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #7e22ce, transparent);
+  width: 75%;
+  margin: 1rem auto 0 auto; /* Reduced top margin */
+  transform: translateY(1px);
 }
 
 .education-title-container {
   display: flex;
   justify-content: center;
   padding: 0.5rem 0;
-  margin: -1.5rem 0;
-  margin-top: 2.25rem; /* Moves up */
+  margin: 0; /* Removed negative margins */
 }
 
 .education-title {
@@ -60,55 +67,50 @@
 }
 
 .education-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  padding: 2rem 0;
-}
-
-@media (min-width: 1024px) {
-  .education-content {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
-  
-  .education-section {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
-  }
-  
-  .education-title-container {
-    padding: 2rem 0;
-  }
+  display: flex;
+  flex-direction: row; /* Always side by side */
+  gap: 1rem; /* Reduced gap */
+  padding: 1.5rem 0; /* Reduced padding */
+  align-items: center; /* Changed to center for vertical alignment of both containers */
+  min-height: 0; /* Allow content to shrink */
 }
 
 .education-animation-container {
+  flex: 0 1 48%; /* Increased flex basis for better centering */
+  min-width: 200px; /* Minimum width to prevent over-shrinking */
+  max-width: 500px;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center; /* Changed to center for vertical centering */
 }
 
 .education-animation-container > div {
-  width: 75%;
-  height: 75%;
+  width: 100%;
+  height: auto;
+  max-width: 100%; /* Allow full width within container */
+  min-width: 200px; /* Minimum size for animation */
 }
 
 .education-cards {
+  flex: 0 1 52%; /* Adjusted flex basis to compensate for animation increase */
+  min-width: 250px; /* Minimum width to prevent over-shrinking */
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  max-width: 600px; /* Added max-width to prevent cards from being too wide */
 }
 
 .education-card-inner {
   position: relative;
-  padding: 0rem 0.85rem;
+  padding: 0rem 1rem; /* Increased horizontal padding for better content distribution */
   color: white;
-  z-index: 10;
+  z-index: 1; /* Reduced z-index */
   width: 100%;
+  max-width: 100%; /* Ensure proper width constraint */
 }
 
 .education-duration {
-  font-size: 1rem !important; /* Increased size & forced override */
+  font-size: 1rem !important;
   color: #16f2b3;
   margin-bottom: 0rem;
   margin-top: -0.2rem;
@@ -121,12 +123,12 @@
 .education-info {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  padding: 0rem 1rem;
+  gap: 1rem; /* Increased gap for better spacing */
+  padding: 0rem 1rem; /* Increased padding for better content distribution */
   position: relative;
   margin-bottom: 0.1rem;
   margin-top: -0.9rem;
-  top: 0.6rem; /* Moves title and institution down without increasing card size */
+  top: 0.6rem;
 }
 
 .education-icon-container {
@@ -135,58 +137,220 @@
   justify-content: center;
   color: #7e22ce;
   transition: all 0.3s;
-  width: 60px; /* Adjust width of background */
-  height: 60px; /* Adjust height of background */
-  background-color: rgba(255, 255, 255, 0.04); /* Opaque background */
-  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.01); /* Soft glow effect */
-  border-radius: 0.9rem; /* Slight rounding for rectangle */
-  margin-top: -12px; /* Moves the SVG up */
+  width: 50px; /* Reduced size */
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.04);
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.01);
+  border-radius: 0.9rem;
+  margin-top: -12px;
+  flex-shrink: 0;
 }
 
 .education-icon-container svg {
-  width: 40px; /* Increase SVG size */
-  height: 40px; /* Increase SVG size */
+  width: 30px; /* Reduced size */
+  height: 30px;
 }
 
 .education-icon-container:hover {
-  transform: scale(1.25);
+  transform: scale(1.15); /* Reduced scale effect */
 }
 
 .education-details {
   flex: 1;
+  min-width: 0;
+  padding-left: 0.5rem; /* Added padding for better text distribution */
 }
 
 .education-title-item {
-  font-size: 1.2rem !important;
+  font-size: 1.1rem !important; /* Reduced font size */
   font-weight: 500;
   margin-bottom: 0.25rem;
   text-transform: uppercase;
-}
-
-.education-institution {
-  font-size: 1rem !important;
-  color: #e2e8f0;
-}
-
-.education-title-item,
-.education-institution {
+  word-wrap: break-word;
   line-height: 1.2;
 }
 
-@media (min-width: 640px) {
-  .education-duration {
-    font-size: 0.875rem;
+.education-institution {
+  font-size: 0.9rem !important; /* Reduced font size */
+  color: #e2e8f0;
+  word-wrap: break-word;
+  line-height: 1.2;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+  .education-content {
+    gap: 0.75rem;
   }
   
-  .education-title-item {
-    font-size: 1.25rem;
+  .education-animation-container {
+    flex: 0 1 42%;
+    min-width: 180px;
   }
   
-  .education-institution {
-    font-size: 1rem;
+  .education-cards {
+    flex: 0 1 58%;
+    min-width: 220px;
+    max-width: 500px;
+  }
+  
+  .education-card-inner {
+    padding: 0rem 0.75rem;
+  }
+  
+  .education-info {
+    padding: 0rem 0.75rem;
+    gap: 0.85rem;
   }
 }
 
+@media (max-width: 768px) {
+  .education-section {
+    padding: 1.5rem 0;
+  }
+  
+  .education-content {
+    gap: 0.5rem;
+    padding: 1rem 0;
+  }
+  
+  .education-animation-container {
+    flex: 0 1 38%;
+    min-width: 150px;
+  }
+  
+  .education-animation-container > div {
+    min-width: 150px;
+  }
+  
+  .education-cards {
+    flex: 0 1 62%;
+    min-width: 200px;
+    gap: 1rem;
+    max-width: 400px;
+  }
+  
+  .education-card-inner {
+    padding: 0rem 0.6rem;
+  }
+  
+  .education-info {
+    padding: 0rem 0.6rem;
+    gap: 0.7rem;
+  }
+  
+  .education-duration {
+    font-size: 0.875rem !important;
+  }
+  
+  .education-title-item {
+    font-size: 1rem !important;
+  }
+  
+  .education-institution {
+    font-size: 0.8rem !important;
+  }
+  
+  .education-icon-container {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .education-icon-container svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .education-animation-container {
+    flex: 0 1 35%;
+    min-width: 120px;
+  }
+  
+  .education-animation-container > div {
+    min-width: 120px;
+  }
+  
+  .education-cards {
+    flex: 0 1 65%;
+    min-width: 180px;
+    max-width: 300px;
+  }
+  
+  .education-card-inner {
+    padding: 0rem 0.5rem;
+  }
+  
+  .education-info {
+    padding: 0rem 0.5rem;
+    gap: 0.6rem;
+  }
+  
+  .education-title-item {
+    font-size: 0.9rem !important;
+  }
+  
+  .education-institution {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-container {
+    padding: 0 0.5rem;
+  }
+  
+  .education-content {
+    gap: 0.25rem;
+  }
+  
+  .education-animation-container {
+    flex: 0 1 32%;
+    min-width: 100px;
+  }
+  
+  .education-animation-container > div {
+    min-width: 100px;
+  }
+  
+  .education-cards {
+    flex: 0 1 68%;
+    min-width: 160px;
+    max-width: 250px;
+  }
+  
+  .education-card-inner {
+    padding: 0rem 0.4rem;
+  }
+  
+  .education-info {
+    padding: 0rem 0.4rem;
+    gap: 0.5rem;
+  }
+  
+  .education-details {
+    padding-left: 0.3rem;
+  }
+  
+  .education-icon-container {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .education-icon-container svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Ensure glow cards maintain proper z-index */
 .education-section .glow-card {
   position: relative;
+  z-index: 1;
+}
+
+/* Prevent any overflow issues */
+.education-section * {
+  box-sizing: border-box;
 }
