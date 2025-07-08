@@ -7,6 +7,7 @@ import "./ThingsIDo.css";
 import frontendAnimation from './animations/frontend.json';
 import backendAnimation from './animations/coding.json';
 import mobileAnimation from './animations/mobile.json';
+import cloudAnimation from './animations/cloudinfra.json';
 
 // Fade animation component (replacing react-awesome-reveal)
 const Fade = ({ children, cascade, damping, direction, triggerOnce }) => {
@@ -17,7 +18,7 @@ const Fade = ({ children, cascade, damping, direction, triggerOnce }) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
-            entry.target.classList.add('fade-up-animate');
+            entry.target.classList.add('things-i-do-fade-up-animate');
           }, 100);
           if (triggerOnce) {
             observer.unobserve(entry.target);
@@ -35,7 +36,7 @@ const Fade = ({ children, cascade, damping, direction, triggerOnce }) => {
   }, [triggerOnce]);
 
   return (
-    <div ref={elementRef} className="fade-up-initial">
+    <div ref={elementRef} className="things-i-do-fade-up-initial">
       {children}
     </div>
   );
@@ -54,6 +55,10 @@ const defaultServiceData = [
   {
     title: "Mobile App Development",
     animationData: mobileAnimation
+  },
+  {
+    title: "Cloud Development",
+    animationData: cloudAnimation
   }
   // TO ADD MORE BOXES: Simply add new objects to this array following the same structure:
   // {
@@ -74,21 +79,21 @@ export default function ThingsIDo({ data = defaultServiceData }) {
   }, []);
 
   return (
-    <div className="things-section">
-      <div className="container pt-20 mx-auto pb-28">
-        <h1 className="section-title">
+    <div className="things-i-do-section">
+      <div className="things-i-do-container things-i-do-pt-20 things-i-do-mx-auto things-i-do-pb-28">
+        <h1 className="things-i-do-section-title">
           Things I Do
         </h1>
 
-        <p className="section-subtitle">
+        <p className="things-i-do-section-subtitle">
           Currently I am improving my skills in these areas
         </p>
 
-        <div className="skills-container">
+        <div className="things-i-do-skills-container">
           {data.map((item, index) => (
-            <div key={index} className="skills-item">
+            <div key={index} className="things-i-do-skills-item">
               <Fade cascade damping={0.5} direction="up" triggerOnce>
-                <div className="skills-box">
+                <div className="things-i-do-skills-box">
                   <lottie-player
                     src={`data:application/json;base64,${btoa(JSON.stringify(item.animationData))}`}
                     background="transparent"
@@ -99,7 +104,7 @@ export default function ThingsIDo({ data = defaultServiceData }) {
                     direction="1"
                     mode="normal"
                   ></lottie-player>
-                  <h2 className="skills-box-title">
+                  <h2 className="things-i-do-skills-box-title">
                     {item.title}
                   </h2>
                 </div>

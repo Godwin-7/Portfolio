@@ -8,13 +8,13 @@
 }
 
 /* Main section styling */
-.things-section {
+.things-i-do-section {
   background-color: var(--bg-color);
   min-height: 100vh;
   padding: 2rem 0;
 }
 
-.container {
+.things-i-do-container {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -22,21 +22,21 @@
   padding-right: 1rem;
 }
 
-.pt-20 {
+.things-i-do-pt-20 {
   padding-top: 5rem;
 }
 
-.pb-28 {
+.things-i-do-pb-28 {
   padding-bottom: 7rem;
 }
 
-.mx-auto {
+.things-i-do-mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
 
 /* Section title styling */
-.section-title {
+.things-i-do-section-title {
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
@@ -44,7 +44,7 @@
   margin-bottom: 1rem;
 }
 
-.section-subtitle {
+.things-i-do-section-subtitle {
   margin-bottom: 3rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -54,7 +54,7 @@
 }
 
 /* Skills container styling - CSS Grid for exact 3 per row */
-.skills-container {
+.things-i-do-skills-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
@@ -63,7 +63,7 @@
 }
 
 /* Skills item wrapper - ensures proper grid behavior */
-.skills-item {
+.things-i-do-skills-item {
   width: 100%;
   max-width: 400px;
   display: flex;
@@ -71,7 +71,7 @@
 }
 
 /* Skills box styling - matching reference website */
-.skills-box {
+.things-i-do-skills-box {
   width: 100%;
   background: var(--bg-color);
   padding: 2rem;
@@ -90,13 +90,13 @@
   height: 100%;
 }
 
-.skills-box:hover {
+.things-i-do-skills-box:hover {
   box-shadow: 0 0.1rem 2rem var(--main-color);
   transform: scale(1.02);
 }
 
 /* Skills box title styling */
-.skills-box-title {
+.things-i-do-skills-box-title {
   font-size: 1.5rem;
   line-height: 1.75rem;
   text-align: center;
@@ -107,18 +107,18 @@
   margin-top: auto;
 }
 
-.skills-box-title:hover {
+.things-i-do-skills-box-title:hover {
   color: var(--main-color);
 }
 
 /* Fade animation styles */
-.fade-up-initial {
+.things-i-do-fade-up-initial {
   opacity: 0;
   transform: translateY(2rem);
   transition: all 0.7s ease-out;
 }
 
-.fade-up-animate {
+.things-i-do-fade-up-animate {
   opacity: 1;
   transform: translateY(0);
 }
@@ -133,20 +133,20 @@ lottie-player {
 
 /* Responsive breakpoints - maintaining 3 per row until very small screens */
 @media (max-width: 1024px) {
-  .skills-container {
+  .things-i-do-skills-container {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
   
-  .skills-item {
+  .things-i-do-skills-item {
     max-width: 350px;
   }
   
-  .skills-box {
+  .things-i-do-skills-box {
     padding: 1.5rem;
   }
   
-  .skills-box-title {
+  .things-i-do-skills-box-title {
     font-size: 1.3rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -158,20 +158,20 @@ lottie-player {
 }
 
 @media (max-width: 768px) {
-  .skills-container {
+  .things-i-do-skills-container {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
   
-  .skills-item {
+  .things-i-do-skills-item {
     max-width: 300px;
   }
   
-  .skills-box {
+  .things-i-do-skills-box {
     padding: 1rem;
   }
   
-  .skills-box-title {
+  .things-i-do-skills-box-title {
     font-size: 1.1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -181,31 +181,31 @@ lottie-player {
     height: 200px !important;
   }
   
-  .section-title {
+  .things-i-do-section-title {
     font-size: 2.5rem;
   }
   
-  .container {
+  .things-i-do-container {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
 }
 
 @media (max-width: 600px) {
-  .skills-container {
+  .things-i-do-skills-container {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
   }
   
-  .skills-item {
+  .things-i-do-skills-item {
     max-width: 250px;
   }
   
-  .skills-box {
+  .things-i-do-skills-box {
     padding: 0.75rem;
   }
   
-  .skills-box-title {
+  .things-i-do-skills-box-title {
     font-size: 1rem;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
@@ -218,21 +218,21 @@ lottie-player {
 
 /* Very small screens - still maintain 3 per row but with minimal spacing */
 @media (max-width: 480px) {
-  .skills-container {
+  .things-i-do-skills-container {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.3rem;
   }
   
-  .skills-item {
+  .things-i-do-skills-item {
     max-width: 200px;
   }
   
-  .skills-box {
+  .things-i-do-skills-box {
     padding: 0.5rem;
     border-radius: 1rem;
   }
   
-  .skills-box-title {
+  .things-i-do-skills-box-title {
     font-size: 0.9rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -242,11 +242,11 @@ lottie-player {
     height: 120px !important;
   }
   
-  .section-title {
+  .things-i-do-section-title {
     font-size: 2rem;
   }
   
-  .section-subtitle {
+  .things-i-do-section-subtitle {
     font-size: 1rem;
     margin-bottom: 2rem;
   }
@@ -254,20 +254,20 @@ lottie-player {
 
 /* Extra small screens - absolute minimum */
 @media (max-width: 360px) {
-  .skills-container {
+  .things-i-do-skills-container {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.2rem;
   }
   
-  .skills-item {
+  .things-i-do-skills-item {
     max-width: 180px;
   }
   
-  .skills-box {
+  .things-i-do-skills-box {
     padding: 0.3rem;
   }
   
-  .skills-box-title {
+  .things-i-do-skills-box-title {
     font-size: 0.8rem;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
@@ -277,7 +277,7 @@ lottie-player {
     height: 100px !important;
   }
   
-  .container {
+  .things-i-do-container {
     padding-left: 0.3rem;
     padding-right: 0.3rem;
   }
