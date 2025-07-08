@@ -10,6 +10,7 @@ import Projects from './components/Pages/Homepage/Projects/Projects';
 import Interest from './components/Pages/Homepage/Interests/Interest';
 import Hero from './components/Pages/Homepage/Home/LaptopAnimation';
 import ThingsIDo from './components/Pages/Homepage/ThingsIDo/ThingsIDo';
+import ContactSection from './components/Pages/Homepage/Contact/Contact';
 import Scroll from './components/Pages/Homepage/ScrollToTop/Scroll';
 
 
@@ -39,6 +40,7 @@ function App() {
                   <Projects />
                   <Skills />
                   <Interest />
+                  <ContactSection />
                   <Scroll />
                 </>
               }
