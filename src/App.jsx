@@ -2,11 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import FloatingLogos from './components/Pages/Homepage/Floating Logos/FloatingLogos';
+import Home from './components/Pages/Homepage/Home/Home';
 import Skills from './components/Pages/Homepage/Skills/Skills';
 import Education from './components/Pages/Homepage/Education/Education';
 import Proficiency from './components/Pages/Homepage/Proficiency/Proficiency';
 import Projects from './components/Pages/Homepage/Projects/Projects';
 import Interest from './components/Pages/Homepage/Interests/Interest';
+import Hero from './components/Pages/Homepage/Home/LaptopAnimation';
+import ThingsIDo from './components/Pages/Homepage/ThingsIDo/ThingsIDo';
 import Scroll from './components/Pages/Homepage/ScrollToTop/Scroll';
 
 
@@ -28,6 +31,9 @@ function App() {
               path="/"
               element={
                 <>
+                  <Home />
+                  <Hero />
+                  <ThingsIDo />
                   <Education />
                   <Proficiency />
                   <Projects />
