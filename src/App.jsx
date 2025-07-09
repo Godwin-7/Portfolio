@@ -11,6 +11,7 @@ import Interest from './components/Pages/Homepage/Interests/Interest';
 import Hero from './components/Pages/Homepage/Home/LaptopAnimation';
 import ThingsIDo from './components/Pages/Homepage/ThingsIDo/ThingsIDo';
 import ContactSection from './components/Pages/Homepage/Contact/Contact';
+import Experience from './components/Pages/Homepage/Experience/Experience';
 import Scroll from './components/Pages/Homepage/ScrollToTop/Scroll';
 
 
@@ -41,6 +42,7 @@ function App() {
                   <Skills />
                   <Interest />
                   <ContactSection />
+                  <Experience />
                   <Scroll />
                 </>
               }

@@ -1,0 +1,452 @@
+/* Lottie Animation Styles */
+.lottie-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lottie-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #16f2b3;
+  opacity: 0.6;
+}
+
+/* Experience Card Styles - Adjusted dimensions */
+#experience .experience-card-inner {
+  position: relative;
+  padding: 1.5rem; /* Increased padding */
+  color: white;
+  z-index: 10;
+  width: 100%;
+  max-width: 100%;
+  min-height: 130px; /* Reduced height */
+  background: transparent;
+}
+
+#experience .experience-duration {
+  font-size: 0.875rem !important;
+  color: #16f2b3;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+#experience .experience-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.25rem 1.5rem 1.5rem 1.5rem; /* Increased padding */
+  position: relative;
+}
+
+#experience .experience-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7e22ce;
+  transition: all 0.3s ease;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  z-index: 10;
+  position: relative;
+}
+
+#experience .experience-icon-container svg {
+  width: 36px;
+  height: 36px;
+  z-index: 10;
+}
+
+#experience .experience-icon-container:hover {
+  transform: scale(1.25);
+}
+
+#experience .experience-details {
+  flex: 1;
+  min-width: 0;
+  z-index: 10;
+  position: relative;
+}
+
+#experience .experience-title-item {
+  font-size: 1.25rem !important;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  word-wrap: break-word;
+  line-height: 1.3;
+  color: white;
+  z-index: 10;
+  position: relative;
+}
+
+#experience .experience-institution {
+  font-size: 1rem !important;
+  color: #e2e8f0;
+  word-wrap: break-word;
+  line-height: 1.3;
+  z-index: 10;
+  position: relative;
+}
+
+/* Experience cards container - With horizontal padding */
+#experience .experience-cards-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem; /* Added horizontal padding */
+}
+
+/* Responsive adjustments for Experience cards */
+@media (max-width: 1024px) {
+  #experience .experience-card-inner {
+    padding: 1.25rem;
+    min-height: 120px; /* Adjusted for smaller screens */
+  }
+  
+  #experience .experience-info {
+    padding: 1rem 1.25rem;
+    gap: 1.5rem;
+  }
+  
+  #experience .experience-icon-container {
+    width: 55px;
+    height: 55px;
+  }
+  
+  #experience .experience-icon-container svg {
+    width: 32px;
+    height: 32px;
+  }
+  
+  #experience .experience-cards-container {
+    padding: 0 0.75rem; /* Adjusted padding */
+  }
+}
+
+@media (max-width: 768px) {
+  #experience .experience-card-inner {
+    padding: 1rem;
+    min-height: 120px;
+  }
+  
+  #experience .experience-info {
+    padding: 0.75rem 1rem;
+    gap: 1.25rem;
+  }
+  
+  #experience .experience-duration {
+    font-size: 0.75rem !important;
+  }
+  
+  #experience .experience-title-item {
+    font-size: 1rem !important;
+  }
+  
+  #experience .experience-institution {
+    font-size: 0.875rem !important;
+  }
+  
+  #experience .experience-icon-container {
+    width: 50px;
+    height: 50px;
+  }
+  
+  #experience .experience-icon-container svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  #experience .experience-card-inner {
+    padding: 0.875rem;
+    min-height: 100px;
+  }
+  
+  #experience .experience-info {
+    padding: 0.5rem 0.75rem;
+    gap: 1rem;
+  }
+  
+  #experience .experience-title-item {
+    font-size: 0.875rem !important;
+  }
+  
+  #experience .experience-institution {
+    font-size: 0.75rem !important;
+  }
+  
+  #experience .experience-details {
+    padding-left: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #experience .experience-card-inner {
+    padding: 0.75rem;
+    min-height: 85px;
+  }
+  
+  #experience .experience-info {
+    padding: 0.4rem 0.5rem;
+    gap: 0.75rem;
+  }
+  
+  #experience .experience-details {
+    padding-left: 0.5rem;
+  }
+  
+  #experience .experience-icon-container {
+    width: 45px;
+    height: 45px;
+  }
+  
+  #experience .experience-icon-container svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Blur overlay for experience cards */
+.blur-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 200px;
+  background-image: url('/blur-23.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Glow Card Styles - Exact match to copy website */
+.glow-container {
+  --spread: 80; /* Changed to 80 to match copy website */
+}
+
+.glow-card {
+  --active: 0.15;
+  --start: 0;
+}
+
+.glow-card:is(:hover, :focus-visible) {
+  z-index: 2;
+}
+
+.glows {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  filter: blur(calc(var(--blur) * 1px));
+}
+
+.glows::after,
+.glows::before {
+  --alpha: 0;
+  content: "";
+  background: conic-gradient(from 180deg at 50% 70%,
+      #f626af 0deg,
+      #8228ec 72.0000010728836deg,
+      #f626af 144.0000021457672deg,
+      #0025ba 216.00000858306885deg,
+      #f626af 288.0000042915344deg,
+      #fafafa 1turn);
+  background-attachment: fixed;
+  position: absolute;
+  inset: -5px;
+  border: 8px solid transparent;
+  border-radius: 12px;
+  mask: linear-gradient(#0000, #0000),
+    conic-gradient(from calc((var(--start) - (var(--spread) * 0.5)) * 1deg),
+      #000 0deg,
+      #fff,
+      #0000 calc(var(--spread) * 1deg));
+  mask-composite: intersect;
+  -webkit-mask-composite: intersect;
+  mask-clip: padding-box, border-box;
+  -webkit-mask-clip: padding-box, border-box;
+  opacity: var(--active);
+  transition: opacity 1s;
+}
+
+.glow-card::before {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  content: "";
+  border-radius: 12px;
+  pointer-events: none;
+  background: #84738c;
+  background-attachment: fixed;
+  mask: linear-gradient(#0000, #0000),
+    conic-gradient(from calc(((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 1.5)) * 1deg),
+      #ffffff26 0deg,
+      white,
+      #ffffff26 calc(var(--spread) * 2.5deg));
+  mask-clip: padding-box, border-box;
+  -webkit-mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+  -webkit-mask-composite: intersect;
+  opacity: var(--active);
+  transition: opacity 1s;
+}
+
+.glow-card::after {
+  --bg-size: 100%;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  background: conic-gradient(from 180deg at 50% 70%,
+      #f626af 0deg,
+      #8228ec 72.0000010728836deg,
+      #f626af 144.0000021457672deg,
+      #0025ba 216.00000858306885deg,
+      #f626af 288.0000042915344deg,
+      #fafafa 1turn);
+  background-attachment: fixed;
+  border-radius: 12px;
+  opacity: var(--active, 0);
+  transition: opacity 1s;
+  --alpha: 0;
+  inset: 0;
+  border: 2px solid transparent;
+  mask: linear-gradient(#0000, #0000),
+    conic-gradient(from calc(((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 0.5)) * 1deg),
+      #0000 0deg,
+      #fff,
+      #0000 calc(var(--spread) * 0.5deg));
+  filter: brightness(1.5);
+  mask-clip: padding-box, border-box;
+  -webkit-mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+  -webkit-mask-composite: intersect;
+}
+
+/* Utility classes for basic styling */
+.relative { position: relative; }
+.z-50 { z-index: 50; }
+.border-t { border-top-width: 1px; }
+.my-12 { margin-top: 3rem; margin-bottom: 3rem; }
+.border-\[#25213b\] { border-color: #25213b; }
+.flex { display: flex; }
+.justify-center { justify-content: center; }
+.my-5 { margin-top: 1.25rem; margin-bottom: 1.25rem; }
+.items-center { align-items: center; }
+.w-24 { width: 6rem; }
+.h-\[2px\] { height: 2px; }
+.bg-\[#1a1443\] { background-color: #1a1443; }
+.w-fit { width: fit-content; }
+.text-white { color: white; }
+.p-2 { padding: 0.5rem; }
+.px-5 { padding-left: 1.25rem; padding-right: 1.25rem; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.rounded-md { border-radius: 0.375rem; }
+.py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.gap-8 { gap: 2rem; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.flex-col { flex-direction: column; }
+.gap-6 { gap: 1.5rem; }
+.h-fit { height: fit-content; }
+.cursor-pointer { cursor: pointer; }
+.border { border-width: 1px; }
+.border-\[#2a2e5a\] { border-color: #2a2e5a; }
+.transition-all { transition-property: all; }
+.duration-300 { transition-duration: 300ms; }
+.bg-\[#101123\] { background-color: #101123; }
+.text-gray-200 { color: #e5e7eb; }
+.rounded-xl { border-radius: 0.75rem; }
+.hover\:border-transparent:hover { border-color: transparent; }
+.items-start { align-items: flex-start; }
+
+/* Responsive Design */
+@media (min-width: 1024px) {
+  .lg\:my-24 { margin-top: 6rem; margin-bottom: 6rem; }
+  .lg\:py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+  .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lg\:gap-16 { gap: 4rem; }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .glow-card,
+  .glows::after,
+  .glows::before,
+  .glow-card::before,
+  .glow-card::after,
+  .transition-all {
+    transition: none;
+    animation: none;
+  }
+  
+  .experience-icon-container:hover {
+    transform: none;
+  }
+}
+
+/* Focus states for accessibility */
+.glow-card:focus-within {
+  outline: 2px solid #16f2b3;
+  outline-offset: 2px;
+}
+
+/* Ensure Experience glow cards maintain proper styling */
+#experience .glow-card {
+  position: relative;
+  z-index: 5;
+  background-color: #101123 !important;
+  border: 1px solid #2a2e5a !important;
+  border-radius: 12px !important;
+}
+
+#experience .glow-card .glows {
+  z-index: 1;
+}
+
+#experience .glow-card .experience-card-inner {
+  position: relative;
+  z-index: 10;
+  background: transparent;
+}
+
+/* Accessibility improvements for Experience section */
+@media (prefers-reduced-motion: reduce) {
+  #experience .glow-card,
+  #experience .glows::after,
+  #experience .glows::before,
+  #experience .glow-card::before,
+  #experience .glow-card::after,
+  #experience .transition-all {
+    transition: none;
+    animation: none;
+  }
+  
+  #experience .experience-icon-container:hover {
+    transform: none;
+  }
+}
+
+/* Focus states for accessibility */
+#experience .glow-card:focus-within {
+  outline: 2px solid #16f2b3;
+  outline-offset: 2px;
+}
+
+/* Prevent any overflow issues in Experience section */
+#experience * {
+  box-sizing: border-box;
+}
