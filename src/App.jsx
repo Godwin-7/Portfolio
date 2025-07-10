@@ -13,6 +13,7 @@ import ThingsIDo from './components/Pages/Homepage/ThingsIDo/ThingsIDo';
 import ContactSection from './components/Pages/Homepage/Contact/Contact';
 import Experience from './components/Pages/Homepage/Experience/Experience';
 import Certificates from './components/Pages/Homepage/Certificates/Certificates';
+import { About } from './components/Pages/Homepage/About/About';
 import Scroll from './components/Pages/Homepage/ScrollToTop/Scroll';
 
 
@@ -45,6 +46,7 @@ function App() {
                   <ContactSection />
                   <Experience />
                   <Certificates />
+                  <About />
                   <Scroll />
                 </>
               }
