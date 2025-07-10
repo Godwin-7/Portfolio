@@ -20,7 +20,7 @@ const contactsData = {
   devUsername: "said7388"
 };
 
-// Improved SVG Icon Components with smaller, better-looking icons
+// Improved SVG Icon Components with smaller SVGs and larger circles
 const TbMailForward = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M22 2L11 13" />
@@ -122,7 +122,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
+    <div className="contact-form-wrapper">
       <p className="contact-form-title">Contact with me</p>
       <div className="contact-form-container">
         <p className="contact-form-description">
@@ -168,7 +168,7 @@ const ContactForm = () => {
               required={true}
               onChange={(e) => setUserInput({ ...userInput, message: e.target.value })}
               onBlur={checkRequired}
-              rows="4"
+              rows="6"
               value={userInput.message}
             />
           </div>
@@ -187,7 +187,7 @@ const ContactForm = () => {
               ) : (
                 <span className="contact-form-button-content">
                   Send Message
-                  <TbMailForward size={18} />
+                  <TbMailForward size={20} />
                 </span>
               )}
             </button>
@@ -212,15 +212,15 @@ const ContactSection = () => {
         <div className="contact-section-info">
           <div className="contact-section-details">
             <p className="contact-section-item">
-              <MdAlternateEmail size={32} className="contact-section-icon" />
+              <MdAlternateEmail size={38} className="contact-section-icon" />
               <span>{contactsData.email}</span>
             </p>
             <p className="contact-section-item">
-              <IoMdCall size={32} className="contact-section-icon" />
+              <IoMdCall size={38} className="contact-section-icon" />
               <span>{contactsData.phone}</span>
             </p>
             <p className="contact-section-item">
-              <CiLocationOn size={32} className="contact-section-icon" />
+              <CiLocationOn size={38} className="contact-section-icon" />
               <span>{contactsData.address}</span>
             </p>
           </div>

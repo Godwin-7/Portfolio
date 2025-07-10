@@ -12,6 +12,7 @@ import Hero from './components/Pages/Homepage/Home/LaptopAnimation';
 import ThingsIDo from './components/Pages/Homepage/ThingsIDo/ThingsIDo';
 import ContactSection from './components/Pages/Homepage/Contact/Contact';
 import Experience from './components/Pages/Homepage/Experience/Experience';
+import Certificates from './components/Pages/Homepage/Certificates/Certificates';
 import Scroll from './components/Pages/Homepage/ScrollToTop/Scroll';
 
 
@@ -43,6 +44,7 @@ function App() {
                   <Interest />
                   <ContactSection />
                   <Experience />
+                  <Certificates />
                   <Scroll />
                 </>
               }

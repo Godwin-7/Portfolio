@@ -1,0 +1,142 @@
+/* Certificates Section Styles */
+.container {
+    width: 100%;
+}  
+
+.certificates {
+    position: relative;
+    justify-content: center;
+    align-items: center; 
+    background-color: var(--bg-color);
+    display: flex;
+    box-sizing: border-box;
+    min-height: 30vh;
+    padding: 50px 0; /* Added padding for better spacing */
+}
+
+.certificates .heading {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+.certificates .heading span {
+    color: var(--main-color);
+}
+
+main.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start; /* Changed to flex-start for dynamic height */
+    justify-content: center;
+    grid-column-gap: 60px;
+}
+
+.col header.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.3rem;
+    padding: 0px 0px 20px 30px;
+}
+
+#edu {
+    font-size: 2.9rem;
+    color: var(--main-color);
+}
+
+#one {
+    font-size: 2.1rem;
+    color: var(--text-color);
+}
+
+#clg {
+    font-size: 1.7rem;
+    color: var(--text-color);
+}
+
+#yr {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.col .contents {
+    padding: 0px 30px;
+    border-left: 2px solid var(--main-color);
+}
+
+.col .contents .box {
+    position: relative;
+    padding: 20px;
+    border: 1px solid var(--shadow-color);
+    background-color: var(--bg-color);
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 8px 0px var(--text-color);
+    border: 1px solid transparent;
+}
+
+/* Optional hover effect - uncomment if needed */
+/* .col .contents .box:hover {
+    box-shadow: 0px 3px 12px 0px var(--text-color);
+    border: 1px solid transparent;
+} */
+
+.col .contents .box::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    right: calc(100% + 22px);
+    top: 0;
+    background-color: var(--main-color);
+    border: 2px solid var(--bg-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main.row {
+        grid-template-columns: 1fr;
+        grid-column-gap: 0;
+        grid-row-gap: 40px;
+    }
+    
+    .certificates .heading {
+        font-size: 2.5rem;
+    }
+    
+    #edu {
+        font-size: 2.5rem;
+    }
+    
+    #one {
+        font-size: 1.8rem;
+    }
+    
+    #clg {
+        font-size: 1.5rem;
+    }
+    
+    #yr {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificates {
+        padding: 30px 10px;
+    }
+    
+    .col .contents {
+        padding: 0px 20px;
+    }
+    
+    .col .contents .box {
+        padding: 15px;
+    }
+    
+    .certificates .heading {
+        font-size: 2rem;
+    }
+}
