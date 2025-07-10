@@ -273,7 +273,6 @@
 .contact-form-input:focus,
 .contact-form-textarea:focus {
   border-color: #16f2b3;
-  ring: 0;
   outline: 0;
   box-shadow: 0 0 0 3px rgba(22, 242, 179, 0.1);
 }
