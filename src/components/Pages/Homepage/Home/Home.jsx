@@ -55,7 +55,7 @@ const Home = () => {
       <section className="home" id="home">
         <div className="home-content">
           <h3>Hi, I am</h3>
-          <h1>Ganesha Ram</h1>
+          <h1>Godwin Wilfred</h1>
           <p></p><br />
           <p>Aspiring Data Scientist & Machine Learning Enthusiast</p>
           

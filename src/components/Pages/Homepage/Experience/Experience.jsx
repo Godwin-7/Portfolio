@@ -122,21 +122,21 @@ const GlowCard = ({ children, identifier }) => {
 const experiences = [
   {
     id: 1,
-    title: 'Software Engineer I',
-    company: "Teton Private Ltd.",
-    duration: "(Jan 2022 - Present)"
+    title: 'Data Science Engineer',
+    company: "Tamriel AGI (USA Remote)",
+    duration: "(July 2024 - Present)"
   },
   {
     id: 2,
     title: "FullStack Developer",
-    company: "Fiverr (freelance)",
-    duration: "(Jun 2021 - Jan 2022)"
+    company: "Critter Graphix Pvt. Ltd",
+    duration: "(Nov 2023 - Jan 2024)"
   },
   {
     id: 3,
-    title: "Self Employed",
-    company: "Code and build something in everyday.",
-    duration: "(Jan 2018 - Present)"
+    title: "Cybersecurity Engineer",
+    company: "Elewayte Pvt Ltd (Collab with Wipro Dice ID)",
+    duration: "(Feb 2023 - April 2023)"
   }
 ];
 

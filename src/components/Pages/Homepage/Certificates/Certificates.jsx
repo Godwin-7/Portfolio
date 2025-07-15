@@ -7,26 +7,26 @@ const Certificates = () => {
     certifications: [
       {
         id: 1,
-        title: "AWS Cloud Practitioner",
-        organization: "Amazon Web Services",
+        title: "Machine Learning (Topper)",
+        organization: "NPTEL",
         year: "2024"
       },
       {
         id: 2,
-        title: "Google Data Analytics Certificate",
-        organization: "Google Career Certificates",
-        year: "2023"
+        title: "Cloud Computing, Cybersecurity",
+        organization: "NPTEL",
+        year: "2023 - 2024"
       },
       {
         id: 3,
-        title: "Machine Learning Specialization",
-        organization: "Stanford University - Coursera",
+        title: "Python, Softskills",
+        organization: "NPTEL",
         year: "2023"
       },
       {
         id: 4, // New ID
-        title: "New Certificate Title",
-        organization: "Organization Name",
+        title: "Human Resources Management, Entrepreneurship",
+        organization: "NPTEL",
         year: "2024"
       }
   // Add more certificates here

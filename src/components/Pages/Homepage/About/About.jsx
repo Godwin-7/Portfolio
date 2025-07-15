@@ -40,7 +40,7 @@ export function About() {
           </div>
           
           <div className="fade-in-right delay-1">
-            <h3>Hi, I'm <span>Ganesha Ram!</span></h3>
+            <h3>Hi, I'm <span>Godwin!</span></h3>
           </div>
           
           <div className="fade-in-right delay-2">

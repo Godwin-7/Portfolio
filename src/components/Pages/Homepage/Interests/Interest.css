@@ -1,6 +1,15 @@
 /* Import RemixIcon for the icons */
 @import url('https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css');
 
+/* CSS Variables for colors matching Things I Do component */
+:root {
+  --main-color: #0ef;
+  --bg-color: #1f242d;
+  --text-color: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --white-color: #ffffff;
+}
+
 /* Container and Layout - Updated for better spacing */
 .interests-container {
   max-width: 1200px;
@@ -20,7 +29,7 @@
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #fff;
+  color: var(--text-color);
   position: relative;
   padding-bottom: 20px;
 }
@@ -31,7 +40,7 @@
   display: block;
   width: 50px;
   height: 3px;
-  background: linear-gradient(45deg, #1c7d32, #28a745);
+  background: var(--main-color);
   bottom: 0;
   left: calc(50% - 25px);
 }
@@ -56,11 +65,14 @@
   display: flex;
   align-items: center;
   padding: 20px;
-  background: #09203a;
+  background: var(--bg-color);
   transition: ease-in-out 0.3s;
   border-radius: 0;
-  box-shadow: none;
-  border: none;
+  box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
+  border-top: 0.15rem solid rgba(14, 255, 255, 0.6);
+  border-bottom: 0.15rem solid rgba(14, 255, 255, 0.6);
+  border-left: 0.05rem solid rgba(14, 255, 255, 0.6);
+  border-right: 0.05rem solid rgba(14, 255, 255, 0.6);
   height: 100%;
   box-sizing: border-box;
 }
@@ -80,20 +92,22 @@
   padding: 0;
   line-height: 1.2;
   font-size: 16px;
-  color: #fff;
+  color: var(--text-color);
   font-family: inherit;
 }
 
 .interests-icon-box:hover {
-  background: #042b56eb;
+  background: var(--bg-color);
   transform: translateY(-2px);
+  box-shadow: 0 0.1rem 2rem var(--main-color);
 }
 
-/* About Section Background - Exact copy from original */
+/* About Section Background - Updated to match Things I Do */
 .interests-section {
-  background: #040b14;
+  background: var(--bg-color);
   padding: 80px 0;
   position: relative;
+  min-height: 100vh;
 }
 
 /* Responsive Design - Updated for better mobile experience */

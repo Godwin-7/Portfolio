@@ -93,13 +93,12 @@ const FloatingLogos = () => {
                   y: 1200
                 }
               },
-              bounce: false,
+              bounce: true,
               direction: "none",
               enable: true,
               outModes: {
                 default: "bounce"
               },
-              bounce: true,
               random: false,
               speed: {
                 min: 0.5,
@@ -127,10 +126,6 @@ const FloatingLogos = () => {
                 enable: true,
                 minimumValue: 0.3
               },
-              value: {
-                min: 0.3,
-                max: 1
-              }
             },
             rotate: {
               animation: {
