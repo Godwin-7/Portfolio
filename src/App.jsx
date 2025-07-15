@@ -8,12 +8,12 @@ import Education from './components/Pages/Homepage/Education/Education';
 import Proficiency from './components/Pages/Homepage/Proficiency/Proficiency';
 import Projects from './components/Pages/Homepage/Projects/Projects';
 import Interest from './components/Pages/Homepage/Interests/Interest';
-import Hero from './components/Pages/Homepage/Home/LaptopAnimation';
 import ThingsIDo from './components/Pages/Homepage/ThingsIDo/ThingsIDo';
 import ContactSection from './components/Pages/Homepage/Contact/Contact';
 import Experience from './components/Pages/Homepage/Experience/Experience';
 import Certificates from './components/Pages/Homepage/Certificates/Certificates';
 import { About } from './components/Pages/Homepage/About/About';
+import { Footer } from './components/Pages/Homepage/Footer/Footer';
 import Scroll from './components/Pages/Homepage/ScrollToTop/Scroll';
 
 
@@ -36,7 +36,6 @@ function App() {
               element={
                 <>
                   <Home />
-                  <Hero />
                   <ThingsIDo />
                   <Education />
                   <Proficiency />
@@ -47,6 +46,7 @@ function App() {
                   <Experience />
                   <Certificates />
                   <About />
+                  <Footer />
                   <Scroll />
                 </>
               }
