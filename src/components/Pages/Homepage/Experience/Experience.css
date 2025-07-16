@@ -1,3 +1,72 @@
+/* Experience Section - Matching Education Section Styling */
+.experience-section {
+  position: relative;
+  z-index: 2; /* Optimized z-index for better compatibility */
+  margin: 0;
+  padding: 2rem 0; /* Reduced padding to minimize height */
+  background: linear-gradient(to bottom, #0f0f23, #1a1443);
+  border-top: 1px solid #25213b;
+  border-bottom: 1px solid #25213b; /* Added bottom border */
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.experience-top-border {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #7e22ce, transparent);
+  width: 75%;
+  margin: 0 auto 1rem auto; /* Reduced bottom margin */
+  transform: translateY(-1px);
+}
+
+.experience-bottom-border {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #7e22ce, transparent);
+  width: 75%;
+  margin: 1rem auto 0 auto; /* Reduced top margin */
+  transform: translateY(1px);
+}
+
+.experience-title-container {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+  margin: 0; /* Removed negative margins */
+}
+
+.experience-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.experience-title-line {
+  width: 6rem;
+  height: 2px;
+  background-color: #1a1443;
+}
+
+.experience-title-text {
+  background-color: #1a1443;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.375rem;
+  font-size: 2rem; /* Increased font size for max screen */
+  text-transform: uppercase;
+}
+
 /* Lottie Animation Styles */
 .lottie-container {
   width: 100%;
@@ -15,20 +84,6 @@
   justify-content: center;
   color: #16f2b3;
   opacity: 0.6;
-}
-
-/* Experience Section - Fixed Dynamic Layout */
-#experience {
-  position: relative;
-  z-index: 50;
-  border-top: 1px solid #25213b;
-  margin: 3rem 0;
-  padding: 2rem 0;
-  background: transparent;
-  min-height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 /* Main grid container - Always horizontal layout */
@@ -70,6 +125,7 @@
   max-width: calc(100% - 2rem);
   margin-right: 2rem;
   padding-right: 1rem;
+  border-radius: 12px; /* Match the glow effect exactly */
 }
 
 /* Experience Card Styles - Responsive sizing */
@@ -81,7 +137,6 @@
   width: 100%;
   max-width: 100%;
   min-height: 130px;
-  background: transparent;
 }
 
 #experience .experience-duration {
@@ -185,11 +240,14 @@
     width: 40px;
     height: 40px;
   }
+  
+  .experience-title-text {
+    font-size: 2rem; /* Increased font size for max screen */
+  }
 }
 
 @media (max-width: 1024px) {
-  #experience {
-    margin: 2.5rem 0;
+  .experience-section {
     padding: 1.5rem 0;
   }
   
@@ -241,11 +299,14 @@
     width: 28px;
     height: 28px;
   }
+  
+  .experience-title-text {
+    font-size: 1.75rem; /* Reduced font size for 1024px */
+  }
 }
 
 @media (max-width: 768px) {
-  #experience {
-    margin: 2rem 0;
+  .experience-section {
     padding: 1.25rem 0;
   }
   
@@ -296,6 +357,10 @@
   #experience .experience-icon-container svg {
     width: 24px;
     height: 24px;
+  }
+  
+  .experience-title-text {
+    font-size: 1.5rem; /* Reduced font size for 768px */
   }
 }
 
@@ -348,6 +413,10 @@
     width: 20px;
     height: 20px;
   }
+  
+  .experience-title-text {
+    font-size: 1.25rem; /* Reduced font size for 640px */
+  }
 }
 
 @media (max-width: 480px) {
@@ -398,6 +467,10 @@
   #experience .experience-icon-container svg {
     width: 18px;
     height: 18px;
+  }
+  
+  .experience-title-text {
+    font-size: 1rem; /* Reduced font size for 480px */
   }
 }
 
@@ -465,6 +538,7 @@
   background-repeat: no-repeat;
   opacity: 0.8;
   pointer-events: none;
+   border-radius: 12px; /* Match the glow effect */
 }
 
 /* Glow Card Styles - Exact match to copy website */
@@ -475,6 +549,9 @@
 .glow-card {
   --active: 0.15;
   --start: 0;
+  background: rgba(16, 17, 35, 0.85) !important; /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Optional: adds a nice blur effect */
+  border-radius: 12px !important; /* Force consistency, remove rounded-xl class conflict */
 }
 
 .glow-card:is(:hover, :focus-visible) {
@@ -630,48 +707,6 @@
   }
   
   .experience-icon-container:hover {
-    transform: none;
-  }
-}
-
-/* Focus states for accessibility */
-.glow-card:focus-within {
-  outline: 2px solid #16f2b3;
-  outline-offset: 2px;
-}
-
-/* Ensure Experience glow cards maintain proper styling */
-#experience .glow-card {
-  position: relative;
-  z-index: 5;
-  background-color: #101123 !important;
-  border: 1px solid #2a2e5a !important;
-  border-radius: 12px !important;
-}
-
-#experience .glow-card .glows {
-  z-index: 1;
-}
-
-#experience .glow-card .experience-card-inner {
-  position: relative;
-  z-index: 10;
-  background: transparent;
-}
-
-/* Accessibility improvements for Experience section */
-@media (prefers-reduced-motion: reduce) {
-  #experience .glow-card,
-  #experience .glows::after,
-  #experience .glows::before,
-  #experience .glow-card::before,
-  #experience .glow-card::after,
-  #experience .transition-all {
-    transition: none;
-    animation: none;
-  }
-  
-  #experience .experience-icon-container:hover {
     transform: none;
   }
 }

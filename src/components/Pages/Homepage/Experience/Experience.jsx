@@ -142,51 +142,55 @@ const experiences = [
 
 function Experience() {
   return (
-    <div id="experience" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Experiences
-          </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-        </div>
-      </div>
-
-      <div className="py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          <div className="flex justify-center items-start">
-            <div className="w-full h-full">
-              <AnimationLottie animationPath={null} width="95%" />
-            </div>
-          </div>
-
-          <div className="experience-cards-container">
-            <div className="flex flex-col gap-6">
-              {experiences.map((experience) => (
-                <GlowCard key={experience.id} identifier={`experience-${experience.id}`}>
-                  <div className="experience-card-inner">
-                    <div className="blur-overlay"></div>
-                    <div className="experience-duration">
-                      <p>{experience.duration}</p>
-                    </div>
-                    <div className="experience-info">
-                      <div className="experience-icon-container">
-                        <BsPersonWorkspace size={36} />
-                      </div>
-                      <div className="experience-details">
-                        <h3 className="experience-title-item">{experience.title}</h3>
-                        <p className="experience-institution">{experience.company}</p>
-                      </div>
-                    </div>
-                  </div>
-                </GlowCard>
-              ))}
-            </div>
+    <section id="experience" className="experience-section">
+      <div className="experience-container">
+        <div className="experience-top-border"></div>
+        
+        <div className="experience-title-container">
+          <div className="experience-title">
+            <span className="experience-title-line"></span>
+            <h2 className="experience-title-text">Experiences</h2>
+            <span className="experience-title-line"></span>
           </div>
         </div>
+
+        <div className="py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+            <div className="flex justify-center items-start">
+              <div className="w-full h-full">
+                <AnimationLottie animationPath={null} width="95%" />
+              </div>
+            </div>
+
+            <div className="experience-cards-container">
+              <div className="flex flex-col gap-6">
+                {experiences.map((experience) => (
+                  <GlowCard key={experience.id} identifier={`experience-${experience.id}`}>
+                    <div className="experience-card-inner">
+                      <div className="blur-overlay"></div>
+                      <div className="experience-duration">
+                        <p>{experience.duration}</p>
+                      </div>
+                      <div className="experience-info">
+                        <div className="experience-icon-container">
+                          <BsPersonWorkspace size={36} />
+                        </div>
+                        <div className="experience-details">
+                          <h3 className="experience-title-item">{experience.title}</h3>
+                          <p className="experience-institution">{experience.company}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </GlowCard>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="experience-bottom-border"></div>
       </div>
-    </div>
+    </section>
   );
 }
 
