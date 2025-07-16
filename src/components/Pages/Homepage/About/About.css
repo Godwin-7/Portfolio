@@ -235,7 +235,7 @@ span {
 /* CSS Variables (add these to your main CSS file if not already present) */
 :root {
   --main-color: #0ef;
-  --bg-color: #1f242d;
+  --bg-color: ##0b061f;
   --text-color: #fff;
   --white-color: #fff;
 }

@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
 
 const Home = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
   useEffect(() => {
     // Load Boxicons CSS
     const boxiconsLink = document.createElement('link');
@@ -25,9 +23,6 @@ const Home = () => {
       document.head.appendChild(fontsLink);
     }
     
-    // Apply theme
-    document.body.classList.toggle('light-mode', !isDarkMode);
-    
     // Cleanup function
     return () => {
       const existingBoxicons = document.getElementById('boxicons-css');
@@ -39,19 +34,10 @@ const Home = () => {
         document.head.removeChild(existingFonts);
       }
     };
-  }, [isDarkMode]);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    document.body.classList.toggle('light-mode', isDarkMode);
-  };
+  }, []);
 
   return (
     <div>
-      <button className="home-theme-toggle" onClick={toggleDarkMode}>
-        <i className={isDarkMode ? 'bx bx-sun' : 'bx bx-moon'}></i>
-      </button>
-
       <section className="home" id="home">
         <div className="home-content">
           <h3>Hi, I am</h3>
