@@ -98,6 +98,9 @@ main.row {
     background-color: var(--main-color);
     border: 2px solid var(--bg-color);
 }
+.col .contents .box:last-child {
+    margin-bottom: 0; /* Remove margin from last box */
+}
 
 /* Responsive Design - Maintaining side-by-side layout */
 @media (max-width: 768px) {

@@ -282,23 +282,14 @@
 }
 
 .contact-section-social-icon {
-  background-color: #8b98a5;
-  padding: 0.5rem;
-  border-radius: 50%;
-  color: #374151;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 30px;
   height: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 @media (min-width: 768px) {
   .contact-section-social-icon {
-    padding: 0.75rem;
     width: 35px;
     height: 35px;
   }
@@ -306,16 +297,13 @@
 
 @media (min-width: 1024px) {
   .contact-section-social-icon {
-    padding: 1rem;
     width: 40px;
     height: 40px;
   }
 }
 
 .contact-section-social-icon:hover {
-  background-color: #16f2b3;
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(22, 242, 179, 0.3);
 }
 
 /* Contact Form Styles */

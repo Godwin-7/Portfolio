@@ -65,7 +65,7 @@
   display: flex;
   align-items: center;
   padding: 20px;
-  background: var(--bg-color);
+  background: #0f0f23;
   transition: ease-in-out 0.3s;
   border-radius: 0;
   box-shadow: 0 0.1rem 0.5rem var(--shadow-color);
