@@ -11,12 +11,12 @@
     display: flex;
     box-sizing: border-box;
     min-height: 30vh;
-    padding: 50px 0; /* Added padding for better spacing */
+    padding: 50px 30; /* Added padding for better spacing */
 }
 
 .certificates .heading {
     text-align: center;
-    margin-bottom: 0px;
+    margin-bottom: 50px;
     font-size: clamp(2rem, 5vw, 3rem);
     color: var(--text-color);
     transition: font-size 0.3s ease;
