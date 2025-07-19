@@ -19,13 +19,13 @@ const projects = [
     title: 'Music Streaming Website',
     image: musicImg,
     component: 'music',
-    category: 'app',
+    category: 'webapp',
   },
   {
     title: 'ML-DL Web-App',
     image: mlImg,
     component: 'ml',
-    category: 'app',
+    category: 'webapp',
   },
   {
     title: 'Resume Section Classifier',
@@ -37,20 +37,20 @@ const projects = [
     title: 'Twitter Analysis',
     image: twitterImg,
     component: 'twitter',
-    category: 'app',
+    category: 'research',
   },
     /*
   {
     title: 'Image recognition as Service',
     image: irasImg,
     component: 'iras',
-    category: 'app',
+    category: 'webapp',
   },
   {
     title: 'Movie Recommender',
     image: recommenderImg,
     component: 'recommender',
-    category: 'app',
+    category: 'webapp',
   },
   {
     title: 'Video Description Generator',
@@ -78,6 +78,22 @@ export default function Projects() {
   const closeModal = () => setSelectedIdx(null);
   const showPrev = () => setSelectedIdx(i => (i > 0 ? i - 1 : i));
   const showNext = () => setSelectedIdx(i => (i < filtered.length - 1 ? i + 1 : i));
+
+  // Function to get category display name
+  const getCategoryDisplayName = (category) => {
+    switch (category) {
+      case 'project':
+        return 'Project';
+      case 'webapp':
+        return 'Web-App';
+      case 'research':
+        return 'Research Paper';
+      case 'blog':
+        return 'Blog';
+      default:
+        return '';
+    }
+  };
 
   // Magnetic effect handlers
   const handleMagneticMove = (e) => {
@@ -183,17 +199,29 @@ export default function Projects() {
             All
           </button>
           <button
-            onClick={() => setFilter('app')}
-            className={filter === 'app' ? 'active' : ''}
+            onClick={() => setFilter('project')}
+            className={filter === 'project' ? 'active' : ''}
+          >
+            Projects
+          </button>
+          <button
+            onClick={() => setFilter('webapp')}
+            className={filter === 'webapp' ? 'active' : ''}
           >
             Web-App
           </button>
           <button
-            onClick={() => setFilter('project')}
-            className={filter === 'project' ? 'active' : ''}
+            onClick={() => setFilter('research')}
+            className={filter === 'research' ? 'active' : ''}
           >
-            Project
+            Research Papers
           </button>
+          {/*<button
+            onClick={() => setFilter('blog')}
+            className={filter === 'blog' ? 'active' : ''}
+          >
+            Blog
+          </button>*/}
         </div>
 
         <div className="projects-grid">
@@ -209,6 +237,11 @@ export default function Projects() {
                 className={`projects-card filter-${project.category}`}
                 onClick={() => openModal(idx)}
               >
+                {filter === 'all' && (
+                  <div className="projects-category-badge">
+                    {getCategoryDisplayName(project.category)}
+                  </div>
+                )}
                 <div className="projects-image-container">
                   <img src={project.image} alt={project.title} />
                   <div className="projects-overlay">
