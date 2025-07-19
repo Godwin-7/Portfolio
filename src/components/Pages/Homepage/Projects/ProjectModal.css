@@ -1,7 +1,7 @@
 .projects-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(11, 6, 31, 0.8);
   backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
@@ -12,16 +12,20 @@
 
 .projects-modal-content {
   position: relative;
-  background: #ffffff;
-  width: 90vw;
-  max-width: 1000px;
-  height: auto;
-  max-height: 90vh;
+  background: #0b061f;
+  border: 2px solid rgba(14, 239, 255, 0.8);
+  width: 92vw; /*Increase or decrease the background container that holds the window*/
+  max-width: 1100px; 
+  height: 95vh; /*Increase or decrease the background container that holds the window*/
+  max-height: none;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    0 20px 40px rgba(14, 239, 255, 0.2),
+    0 0 20px rgba(14, 239, 255, 0.5),
+    inset 0 0 20px rgba(14, 239, 255, 0.1);
   padding: 0;
 }
 
@@ -38,22 +42,24 @@
   font-size: 26px;
   background: none;
   border: none;
-  color: #333;
+  color: #fdfdfd;
   font-weight: bold;
   cursor: pointer;
   z-index: 1002;
+  transition: all 0.3s ease;
 }
 
 .projects-modal-close:hover {
-  color: #12d640;
+  color: #0ef;
+  transform: scale(1.1);
 }
 
 .projects-modal-nav {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  background: linear-gradient(135deg, rgba(18, 214, 96, 0.9), rgba(15, 162, 59, 0.9));
-  color: #fff;
+  background: linear-gradient(135deg, rgba(14, 239, 255, 0.9), rgba(0, 200, 220, 0.9));
+  color: #0b061f;
   border: none;
   width: 50px;
   height: 70px;
@@ -64,24 +70,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 25px rgba(18, 214, 96, 0.3);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(14, 239, 255, 0.3);
+  border: 2px solid rgba(253, 253, 253, 0.2);
   backdrop-filter: blur(10px);
 }
 
 .projects-modal-nav:hover {
-  background: linear-gradient(135deg, #0fa23b, #0a782b);
+  background: linear-gradient(135deg, #0ef, #00c8dc);
   transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 12px 35px rgba(15, 162, 59, 0.4);
+  box-shadow: 0 12px 35px rgba(14, 239, 255, 0.4);
+  border-color: #0ef;
 }
 
 .projects-modal-nav:active {
   transform: translateY(-50%) scale(0.95);
-  background: linear-gradient(135deg, #0a782b, #085d21);
+  background: linear-gradient(135deg, #00c8dc, #0090a0);
 }
 
 .projects-modal-nav svg {
   transition: transform 0.3s ease;
+  stroke: #0b061f;
 }
 
 .projects-modal-nav:hover svg {
