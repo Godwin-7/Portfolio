@@ -11,7 +11,7 @@
     display: flex;
     box-sizing: border-box;
     min-height: 30vh;
-    padding: 50px 30; /* Added padding for better spacing */
+    padding: 50px 30px; /* Fixed missing 'px' unit */
 }
 
 .certificates .heading {
@@ -67,6 +67,7 @@ main.row {
 .col .contents {
     padding: 0px clamp(15px, 3vw, 30px);
     border-left: 2px solid var(--main-color);
+    position: relative; /* Added for better positioning context */
 }
 
 .col .contents .box {
@@ -93,11 +94,13 @@ main.row {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    right: calc(100% + 22px);
+    /* Fixed positioning: center of circle should align with center of 2px border */
+    left: calc(-1 * (clamp(15px, 3vw, 30px) + 8px + 1px) - 2.5px); /* -(padding + half-circle + half-border) - 2.5px adjustment */
     top: 0;
     background-color: var(--main-color);
     border: 2px solid var(--bg-color);
 }
+
 .col .contents .box:last-child {
     margin-bottom: 0; /* Remove margin from last box */
 }
@@ -119,6 +122,13 @@ main.row {
     
     .col .contents .box {
         padding: clamp(8px, 2vw, 15px);
+    }
+    
+    .col .contents .box::before {
+        width: 14px;
+        height: 14px;
+        /* Adjusted for smaller padding */
+        left: calc(-1 * (clamp(10px, 2vw, 20px) + 7px + 1px) - 2.5px);
     }
 }
 
@@ -147,7 +157,8 @@ main.row {
     .col .contents .box::before {
         width: 12px;
         height: 12px;
-        right: calc(100% + 18px);
+        /* Adjusted for smaller padding */
+        left: calc(-1 * (clamp(8px, 2vw, 15px) + 6px + 1px) - 2.5px);
     }
 }
 
@@ -176,6 +187,7 @@ main.row {
     .col .contents .box::before {
         width: 10px;
         height: 10px;
-        right: calc(100% + 15px);
+        /* Adjusted for smallest padding */
+        left: calc(-1 * (clamp(5px, 1.5vw, 10px) + 5px + 1px) - 2.5px);
     }
 }
