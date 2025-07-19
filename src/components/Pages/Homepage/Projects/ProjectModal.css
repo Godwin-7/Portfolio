@@ -1,4 +1,4 @@
-.modal-overlay {
+.projects-modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
@@ -10,7 +10,7 @@
   padding: 20px;
 }
 
-.modal-content {
+.projects-modal-content {
   position: relative;
   background: #ffffff;
   width: 90vw;
@@ -25,13 +25,13 @@
   padding: 0;
 }
 
-.modal-inner {
+.projects-modal-inner {
   overflow: hidden;
   width: 100%;
   height: 100%;
 }
 
-.modal-close {
+.projects-modal-close {
   position: absolute;
   top: 12px;
   right: 20px;
@@ -44,11 +44,11 @@
   z-index: 1002;
 }
 
-.modal-close:hover {
+.projects-modal-close:hover {
   color: #12d640;
 }
 
-.modal-nav {
+.projects-modal-nav {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
@@ -64,15 +64,15 @@
   transition: background 0.2s ease;
 }
 
-.modal-nav:hover {
+.projects-modal-nav:hover {
   background-color: #0fa23b;
 }
 
-.modal-nav.left {
+.projects-modal-nav.left {
   left: 10px;
 }
 
-.modal-nav.right {
+.projects-modal-nav.right {
   right: 10px;
 }
 

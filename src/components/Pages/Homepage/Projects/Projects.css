@@ -3,7 +3,7 @@
   background: #f5f7fa;
 }
 
-.section-title {
+.projects-section-title {
   text-align: center;
   font-size: 36px;
   color: #0d1224;
@@ -11,7 +11,7 @@
   font-weight: 700;
 }
 
-.filters {
+.projects-filters {
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -19,7 +19,7 @@
   flex-wrap: wrap;
 }
 
-.filters button {
+.projects-filters button {
   padding: 10px 20px;
   background: #e0e0e0;
   border: none;
@@ -30,8 +30,8 @@
   transition: all 0.25s ease-in-out;
 }
 
-.filters button.active,
-.filters button:hover {
+.projects-filters button.active,
+.projects-filters button:hover {
   background-color: #12d640;
   color: white;
 }
@@ -42,7 +42,7 @@
   gap: 30px;
 }
 
-.project-card {
+.projects-card {
   position: relative;
   text-align: center;
   background: #ffffff;
@@ -54,15 +54,15 @@
   transform-style: preserve-3d; /* Enable 3D transforms */
 }
 
-.project-card:hover {
+.projects-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  animation: shake-flip 0.6s ease-in-out;
+  animation: projects-shake-flip 0.6s ease-in-out;
 }
 
 /* Clean corner borders on hover - from reference CSS */
-.project-card::before,
-.project-card::after {
+.projects-card::before,
+.projects-card::after {
   content: '';
   position: absolute;
   width: 25px;
@@ -74,7 +74,7 @@
   z-index: 1;
 }
 
-.project-card::before {
+.projects-card::before {
   top: 8px;
   left: 8px;
   border-right: none;
@@ -82,7 +82,7 @@
   border-top-left-radius: 8px;
 }
 
-.project-card::after {
+.projects-card::after {
   bottom: 8px;
   right: 8px;
   border-left: none;
@@ -90,23 +90,23 @@
   border-bottom-right-radius: 8px;
 }
 
-.project-card:hover::before,
-.project-card:hover::after {
+.projects-card:hover::before,
+.projects-card:hover::after {
   opacity: 1;
 }
 
-.project-card h4 {
+.projects-card h4 {
   padding: 14px;
   font-size: 18px;
   color: #12d640;
 }
 
-.image-container {
+.projects-image-container {
   position: relative;
   overflow: hidden;
 }
 
-.image-container img {
+.projects-image-container img {
   width: 100%;
   height: auto;
   display: block;
@@ -114,11 +114,11 @@
   border-bottom: 1px solid #eee;
 }
 
-.image-container:hover img {
+.projects-image-container:hover img {
   transform: scale(1.06);
 }
 
-.overlay {
+.projects-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
@@ -131,19 +131,19 @@
   backdrop-filter: blur(2px);
 }
 
-.image-container:hover .overlay {
+.projects-image-container:hover .projects-overlay {
   opacity: 1;
   background: rgba(0, 0, 0, 0.7);
 }
 
 /* Reset icon transform in overlay */
-.overlay .info-icon {
+.projects-overlay .projects-info-icon {
   position: relative;
   margin-bottom: 20px;
 }
 
 /* Polished SVG info icon */
-.info-icon {
+.projects-info-icon {
   width: 52px;
   height: 52px;
   display: flex;
@@ -156,45 +156,45 @@
   border: 2px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   transform: scale(0);
-  animation: bounce-in 0.6s ease-out 0.2s forwards;
+  animation: projects-bounce-in 0.6s ease-out 0.2s forwards;
 }
 
-.info-icon svg {
+.projects-info-icon svg {
   stroke: #fff;
   stroke-width: 2.5;
   transition: transform 0.3s ease;
 }
 
-.overlay:hover .info-icon {
+.projects-overlay:hover .projects-info-icon {
   background: linear-gradient(135deg, #0fa23b, #0a782b);
   transform: scale(1.15) rotate(5deg);
   box-shadow: 0 12px 35px rgba(15, 162, 59, 0.4);
 }
 
-.overlay:hover .info-icon svg {
+.projects-overlay:hover .projects-info-icon svg {
   transform: rotate(-5deg) scale(1.1);
 }
 
-@keyframes bounce-in {
+@keyframes projects-bounce-in {
   0% { transform: scale(0) rotate(180deg); opacity: 0; }
   50% { transform: scale(1.2) rotate(90deg); opacity: 0.8; }
   100% { transform: scale(1) rotate(0deg); opacity: 1; }
 }
 
-@keyframes pulse-glow {
+@keyframes projects-pulse-glow {
   0%, 100% { box-shadow: 0 8px 25px rgba(18, 214, 96, 0.3); }
   50% { box-shadow: 0 8px 25px rgba(18, 214, 96, 0.6), 0 0 20px rgba(18, 214, 96, 0.4); }
 }
 
-.info-icon:hover {
-  animation: pulse-glow 1.5s ease-in-out infinite;
+.projects-info-icon:hover {
+  animation: projects-pulse-glow 1.5s ease-in-out infinite;
 }
 
 [data-aos].aos-animate {
   transform-style: preserve-3d;
 }
 
-.view-project-text {
+.projects-view-project-text {
   position: absolute;
   bottom: 15%;
   left: 50%;
@@ -221,35 +221,35 @@
 }
 
 /* Magnetic hover effect - requires JavaScript */
-.view-project-text.magnetic {
+.projects-view-project-text.projects-magnetic {
   transition: transform 0.1s ease-out;
 }
 
-.image-container:hover .view-project-text {
+.projects-image-container:hover .projects-view-project-text {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
-  animation: slide-up-bounce 0.6s ease-out 0.4s both;
+  animation: projects-slide-up-bounce 0.6s ease-out 0.4s both;
 }
 
-.view-project-text:hover {
+.projects-view-project-text:hover {
   background: linear-gradient(135deg, #0fa23b, #0a782b);
   box-shadow: 0 8px 25px rgba(15, 162, 59, 0.4);
   transform: translateX(-50%) translateY(-3px) scale(1.05);
 }
 
-.view-project-text:active {
+.projects-view-project-text:active {
   transform: translateX(-50%) translateY(0) scale(0.95);
   background: linear-gradient(135deg, #0a782b, #085d21);
 }
 
-@keyframes slide-up-bounce {
+@keyframes projects-slide-up-bounce {
   0% { transform: translateX(-50%) translateY(30px); opacity: 0; }
   60% { transform: translateX(-50%) translateY(-5px); opacity: 0.8; }
   100% { transform: translateX(-50%) translateY(0); opacity: 1; }
 }
 
 /* Ripple effect on click */
-.view-project-text::after {
+.projects-view-project-text::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -262,12 +262,12 @@
   transition: width 0.3s, height 0.3s;
 }
 
-.view-project-text:active::after {
+.projects-view-project-text:active::after {
   width: 100px;
   height: 100px;
 }
 
-@keyframes shake-flip {
+@keyframes projects-shake-flip {
   0% { transform: translateY(-8px) scale(1.02) rotateY(0deg); }
   15% { transform: translateY(-8px) scale(1.02) rotateY(-5deg) rotateX(5deg) translateX(-3px); }
   30% { transform: translateY(-8px) scale(1.02) rotateY(5deg) rotateX(-5deg) translateX(3px); }
@@ -278,11 +278,11 @@
   100% { transform: translateY(-8px) scale(1.02) rotateY(0deg) rotateX(0deg) translateX(0px); }
 }
 
-.project-card:active {
-  animation: intense-shake 0.3s ease-in-out;
+.projects-card:active {
+  animation: projects-intense-shake 0.3s ease-in-out;
 }
 
-@keyframes intense-shake {
+@keyframes projects-intense-shake {
   0%, 100% { transform: translateY(-8px) scale(1.02) rotate(0deg); }
   25% { transform: translateY(-8px) scale(1.02) rotate(-5deg) translateX(-3px); }
   50% { transform: translateY(-8px) scale(1.02) rotate(5deg) translateX(3px); }
@@ -290,7 +290,7 @@
 }
 
 /* 3D flip animation for AOS */
-@keyframes flip-up-3d {
+@keyframes projects-flip-up-3d {
   0% {
     transform: perspective(600px) rotateX(90deg) translateY(60px);
     opacity: 0;
@@ -315,26 +315,26 @@
 
 /* Apply custom AOS animation */
 [data-aos="flip-up"].aos-animate {
-  animation: flip-up-3d 1s ease-in-out;
+  animation: projects-flip-up-3d 1s ease-in-out;
   backface-visibility: hidden;
   transform-style: preserve-3d;
 }
 
-.project-card.shake {
-  animation: intense-shake 0.8s ease-in-out;
+.projects-card.shake {
+  animation: projects-intense-shake 0.8s ease-in-out;
 }
 
 
-.ripple {
+.projects-ripple {
   position: absolute;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.4);
   transform: scale(0);
-  animation: ripple-animation 0.6s linear;
+  animation: projects-ripple-animation 0.6s linear;
   pointer-events: none;
 }
 
-@keyframes ripple-animation {
+@keyframes projects-ripple-animation {
   to {
     transform: scale(4);
     opacity: 0;

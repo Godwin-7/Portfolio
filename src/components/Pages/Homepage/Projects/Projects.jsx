@@ -104,7 +104,7 @@ export default function Projects() {
     ripple.style.width = ripple.style.height = size + 'px';
     ripple.style.left = x + 'px';
     ripple.style.top = y + 'px';
-    ripple.classList.add('ripple');
+    ripple.classList.add('projects-ripple');
     
     button.appendChild(ripple);
     
@@ -115,14 +115,44 @@ export default function Projects() {
     }, 600);
   };
 
+  // Scroll prevention functions
+  const preventScroll = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  };
+
+  const keydownHandler = (e) => {
+    if ([32, 33, 34, 35, 36, 37, 38, 39, 40].includes(e.keyCode)) {
+      e.preventDefault();
+    }
+  };
+
   useEffect(() => {
     if (selectedIdx !== null) {
+      // Prevent scrolling
       document.body.style.overflow = 'hidden';
+      
+      // Add event listeners to prevent scroll events
+      window.addEventListener('wheel', preventScroll, { passive: false });
+      window.addEventListener('touchmove', preventScroll, { passive: false });
+      window.addEventListener('keydown', keydownHandler);
     } else {
+      // Restore scrolling
       document.body.style.overflow = '';
+      
+      // Remove event listeners
+      window.removeEventListener('wheel', preventScroll);
+      window.removeEventListener('touchmove', preventScroll);
+      window.removeEventListener('keydown', keydownHandler);
     }
+
+    // Cleanup function
     return () => {
       document.body.style.overflow = '';
+      window.removeEventListener('wheel', preventScroll);
+      window.removeEventListener('touchmove', preventScroll);
+      window.removeEventListener('keydown', keydownHandler);
     };
   }, [selectedIdx]);
 
@@ -142,10 +172,10 @@ export default function Projects() {
 
   return (
     <section className="projects-section" id="projects">
-      <div className="container">
-        <h2 className="section-title">Projects</h2>
+      <div className="projects-container">
+        <h2 className="projects-section-title">Projects</h2>
 
-        <div className="filters">
+        <div className="projects-filters">
           <button
             onClick={() => setFilter('all')}
             className={filter === 'all' ? 'active' : ''}
@@ -176,13 +206,13 @@ export default function Projects() {
               data-aos-duration="1000"
             >
               <div
-                className={`project-card filter-${project.category}`}
+                className={`projects-card filter-${project.category}`}
                 onClick={() => openModal(idx)}
               >
-                <div className="image-container">
+                <div className="projects-image-container">
                   <img src={project.image} alt={project.title} />
-                  <div className="overlay">
-                    <div className="info-icon">
+                  <div className="projects-overlay">
+                    <div className="projects-info-icon">
                       <svg
                         viewBox="0 0 24 24"
                         fill="none"
@@ -198,7 +228,7 @@ export default function Projects() {
                       </svg>
                     </div>
                     <span 
-                      className="view-project-text magnetic"
+                      className="projects-view-project-text projects-magnetic"
                       onMouseMove={handleMagneticMove}
                       onMouseLeave={handleMagneticLeave}
                       onClick={(e) => {
