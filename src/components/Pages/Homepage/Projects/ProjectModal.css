@@ -52,20 +52,40 @@
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 30px;
-  background-color: rgba(18, 214, 96, 0.85);
+  background: linear-gradient(135deg, rgba(18, 214, 96, 0.9), rgba(15, 162, 59, 0.9));
   color: #fff;
   border: none;
-  width: 40px;
-  height: 60px;
-  border-radius: 4px;
+  width: 50px;
+  height: 70px;
+  border-radius: 12px;
   cursor: pointer;
   z-index: 1001;
-  transition: background 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(18, 214, 96, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .projects-modal-nav:hover {
-  background-color: #0fa23b;
+  background: linear-gradient(135deg, #0fa23b, #0a782b);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 12px 35px rgba(15, 162, 59, 0.4);
+}
+
+.projects-modal-nav:active {
+  transform: translateY(-50%) scale(0.95);
+  background: linear-gradient(135deg, #0a782b, #085d21);
+}
+
+.projects-modal-nav svg {
+  transition: transform 0.3s ease;
+}
+
+.projects-modal-nav:hover svg {
+  transform: scale(1.2);
 }
 
 .projects-modal-nav.left {

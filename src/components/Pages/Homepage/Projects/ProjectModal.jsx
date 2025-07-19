@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './ProjectModal.css';
 
 import Music from './Projects-all/Music/Music';
@@ -17,6 +17,22 @@ export default function ProjectModal({ project, onClose, onPrev, onNext, hasPrev
 
   const DetailComponent = components[project.component];
 
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowLeft' && hasPrev) {
+        onPrev();
+      } else if (e.key === 'ArrowRight' && hasNext) {
+        onNext();
+      } else if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [hasPrev, hasNext, onPrev, onNext, onClose]);
+
   if (!DetailComponent) return null;
 
   return (
@@ -26,12 +42,16 @@ export default function ProjectModal({ project, onClose, onPrev, onNext, hasPrev
 
         {hasPrev && (
           <button className="projects-modal-nav left" onClick={onPrev} title="Previous Project">
-            ‹
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15,18 9,12 15,6"></polyline>
+            </svg>
           </button>
         )}
         {hasNext && (
           <button className="projects-modal-nav right" onClick={onNext} title="Next Project">
-            ›
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9,18 15,12 9,6"></polyline>
+            </svg>
           </button>
         )}
 
