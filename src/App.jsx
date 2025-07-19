@@ -20,6 +20,11 @@ import Music from './components/Pages/Homepage/Projects/Projects-all/Music/Music
 import ML from './components/Pages/Homepage/Projects/Projects-all/ML/ML';
 import Resume from './components/Pages/Homepage/Projects/Projects-all/Resume/Resume';
 import Twitter from './components/Pages/Homepage/Projects/Projects-all/Twitter/Twitter';
+import SpinachClassification from './components/Pages/Homepage/Projects/Projects-all/SpinachClassification/SpinachClassification';
+import FoodQualityResearch from './components/Pages/Homepage/Projects/Projects-all/FoodQualityResearch/FoodQualityResearch';
+import CIRP from './components/Pages/Homepage/Projects/Projects-all/CIRP/CIRP';
+import ExpenseTracker from './components/Pages/Homepage/Projects/Projects-all/ExpenseTracker/ExpenseTracker';
+import WeatherApp from './components/Pages/Homepage/Projects/Projects-all/WeatherApp/WeatherApp';
 
 function App() {
   return (
@@ -54,6 +59,11 @@ function App() {
             <Route path="/projects/ml" element={<ML />} />
             <Route path="/projects/resume" element={<Resume />} />
             <Route path="/projects/twitter" element={<Twitter />} />
+            <Route path="/projects/spinach" element={<SpinachClassification />} />
+            <Route path="/projects/foodquality" element={<FoodQualityResearch />} />
+            <Route path="/projects/cirp" element={<CIRP />} />
+            <Route path="/projects/expensetracker" element={<ExpenseTracker />} />
+            <Route path="/projects/weatherapp" element={<WeatherApp />} />
           </Routes>
         </div>
       </Router>

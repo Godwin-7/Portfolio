@@ -9,6 +9,16 @@ import musicImg from './Projects-all/Music/img/musicplayer.jpg';
 import mlImg from './Projects-all/ML/img/ml.jpg';
 import resumeImg from './Projects-all/Resume/img/resume.jpg';
 import twitterImg from './Projects-all/Twitter/img/twitteranalysis.jpg';
+import spinachImg from './Projects-all/SpinachClassification/img/spinach.jpg';
+import foodQualityImg from './Projects-all/FoodQualityResearch/img/food-quality.jpg';
+import cirpImg from './Projects-all/CIRP/img/cirp.jpg';
+import expenseTrackerImg from './Projects-all/ExpenseTracker/img/expense.jpg';
+import weatherAppImg from './Projects-all/WeatherApp/img/weather.jpg';
+import SpinachClassification from './Projects-all/SpinachClassification/SpinachClassification';
+import FoodQualityResearch from './Projects-all/FoodQualityResearch/FoodQualityResearch';
+import CIRP from './Projects-all/CIRP/CIRP';
+import ExpenseTracker from './Projects-all/ExpenseTracker/ExpenseTracker';
+import WeatherApp from './Projects-all/WeatherApp/WeatherApp';
 /*import irasImg from './Projects-all/Image/img/iras.jpeg';
 import recommenderImg from './Projects-all/Movies/img/recommender.jpg';
 import vdgImg from './Projects-all/VDG/img/vdg.jpg';
@@ -38,6 +48,36 @@ const projects = [
     image: twitterImg,
     component: 'twitter',
     category: 'research',
+  },
+  {
+    title: 'Spinach Classification',
+    image: spinachImg,
+    component: 'spinach',
+    category: 'research',
+  },
+  {
+    title: 'Food Quality Research',
+    image: foodQualityImg,
+    component: 'foodquality',
+    category: 'research',
+  },
+  {
+    title: 'CIRP',
+    image: cirpImg,
+    component: 'cirp',
+    category: 'webapp',
+  },
+  {
+    title: 'Expense Tracker',
+    image: expenseTrackerImg,
+    component: 'expensetracker',
+    category: 'webapp',
+  },
+  {
+    title: 'Weather App',
+    image: weatherAppImg,
+    component: 'weatherapp',
+    category: 'webapp',
   },
     /*
   {

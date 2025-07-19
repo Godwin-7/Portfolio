@@ -5,6 +5,11 @@ import Music from './Projects-all/Music/Music';
 import ML from './Projects-all/ML/ML';
 import Resume from './Projects-all/Resume/Resume';
 import Twitter from './Projects-all/Twitter/Twitter';
+import SpinachClassification from './Projects-all/SpinachClassification/SpinachClassification';
+import FoodQualityResearch from './Projects-all/FoodQualityResearch/FoodQualityResearch';
+import CIRP from './Projects-all/CIRP/CIRP';
+import ExpenseTracker from './Projects-all/ExpenseTracker/ExpenseTracker';
+import WeatherApp from './Projects-all/WeatherApp/WeatherApp';
 
 export default function ProjectModal({ project, onClose, onPrev, onNext, hasPrev, hasNext }) {
   const components = {
@@ -12,6 +17,11 @@ export default function ProjectModal({ project, onClose, onPrev, onNext, hasPrev
     ml: ML,
     resume: Resume,
     twitter: Twitter,
+    spinach: SpinachClassification,
+    foodquality: FoodQualityResearch,
+    cirp: CIRP,
+    expensetracker: ExpenseTracker,
+    weatherapp: WeatherApp,
     // Add more mappings here if needed
   };
 
